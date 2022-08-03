@@ -1,17 +1,17 @@
 .footer {
     background: #E7F7F3;
-    padding: 30px 100px;
+    padding: 30px 70px;
 }
 
 .footer__logo {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 14px;
     color: #000000;
 }
 
 .footer__links {
     list-style: none;
-    gap: 48px;
+    gap: 10px;
     
     li {
         cursor: pointer;
@@ -19,5 +19,5 @@
 }
 
 .footer__socials {
-    gap: 41px;
+    gap: 11px;
 }

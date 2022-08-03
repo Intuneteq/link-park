@@ -24,8 +24,12 @@ const Navbar = () => {
         <li>
           <Link to='/'>Blog</Link>
         </li>
-        <li>
-          <Link to='/'>{user.student}</Link>
+        <li className="drop">
+            Student
+          <div className="dropdown">
+            <p><Link to=''>{user.student}</Link></p>
+            <p><Link to=''>{user.parent}</Link></p>
+          </div>
         </li>
         <li>
           <Link to='/'>About us</Link>

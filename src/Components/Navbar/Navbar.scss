@@ -23,6 +23,23 @@ nav {
       font-weight: 500;
       font-size: 18px;
     }
+
+    .dropdown{
+      display: none;
+   
+
+      p{
+        padding: 5px 0;
+      }
+    }
+  }
+  .drop:hover .dropdown{
+    display: block;
+    position: absolute;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px 0;
+    // border: 1px solid rgba(225, 225,225, 1.0);
   }
 }
 

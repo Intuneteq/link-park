@@ -1,0 +1,61 @@
+nav {
+  padding: 2.8rem 0;
+}
+
+.nav__logo h1 {
+  color: var(--black-color);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.nav__links {
+  gap: 3.4rem;
+}
+
+.nav__links li {
+  list-style: none;
+}
+
+.nav__links li a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--black-color);
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.nav__links li .dropdown {
+  display: none;
+}
+
+.nav__links li .dropdown p {
+  padding: 5px 0;
+}
+
+.nav__links .drop:hover .dropdown {
+  display: block;
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px 0;
+}
+
+.nav__user {
+  gap: 36px;
+}
+
+.nav__user a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--black-color);
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.nav__user .sign-up {
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  color: var(--primary-color);
+  padding: 11px 17px;
+}
+/*# sourceMappingURL=Navbar.css.map */
