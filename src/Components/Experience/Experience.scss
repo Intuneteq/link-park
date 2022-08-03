@@ -1,0 +1,27 @@
+.experience {
+    padding: 61px 0;
+    background-color: pink;
+
+    h1 {
+        text-align: center;
+        margin-bottom: 45px;
+    }
+}
+
+.experience__body {
+    flex-direction: column;
+    gap: 62px;
+
+    div {
+        width: 240px;
+        height: 240px;
+        border-radius: 19.2px;
+        border: 4.8px solid #AFB1B6;
+    }
+
+    p {
+        font-weight: 500;
+        font-size: 20px;
+        color: var(--black-color-secondary);
+    }
+}

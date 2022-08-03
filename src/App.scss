@@ -1,0 +1,35 @@
+.App {
+  padding: 0 6.25rem;
+}
+
+.app__flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app__flex-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app__flex-3 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.app__flex-4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.btn {
+  padding: 20px 30px;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+}

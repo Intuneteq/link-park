@@ -1,0 +1,23 @@
+.footer {
+    background: #E7F7F3;
+    padding: 30px 100px;
+}
+
+.footer__logo {
+    font-weight: 700;
+    font-size: 20px;
+    color: #000000;
+}
+
+.footer__links {
+    list-style: none;
+    gap: 48px;
+    
+    li {
+        cursor: pointer;
+    }
+}
+
+.footer__socials {
+    gap: 41px;
+}
