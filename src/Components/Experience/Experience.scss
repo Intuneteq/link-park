@@ -1,5 +1,5 @@
 .experience {
-    padding: 61px 0;
+    padding: 3.75rem 6.25rem 3.75rem;
     background-color: pink;
 
     h1 {
@@ -23,5 +23,39 @@
         font-weight: 500;
         font-size: 20px;
         color: var(--black-color-secondary);
+    }
+}
+
+// <----------------------------------------------- Media Query ----------------------------------------------->
+
+@media screen and (max-width: 900px) {
+    .experience {
+        width: 100%;
+        padding: 3.75rem 3rem 3.75rem;
+
+        div {
+            width: 100%;
+            flex-direction: column;
+            gap: 40px;
+        }
+    
+        h1 {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+    }
+    
+    .experience__body {
+        gap: 10px !important;
+    
+        div {
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .experience {
+        padding: 3.75rem 1.5rem 3.75rem;
     }
 }

@@ -1,12 +1,9 @@
 .statistics {
     background: var(--primary-color);
-    padding: 89px 0 160px;
+    padding: 5.6rem 6.25rem 16.9rem;
 
     h1 {
         text-align: center;
-        font-weight: 500;
-        font-size: 40px;
-        color: var(--black-color-secondary);
         margin-bottom: 166px;
     }
 
@@ -19,16 +16,46 @@
     flex-direction: column;
 
     h2 {
+        color: var(--black-color-secondary);
         font-weight: 700;
         font-size: 35px;
         text-align: center;
-        color: var(--black-color-secondary);
     }
 
     p {
-        text-align: center;
-        font-weight: 400;
         font-size: 20px;
+        text-align: center;
         line-height: 24.2px;
+    }
+}
+
+// <-------------------------------- Media Query -------------------------------------------------------------------------->
+
+@media screen and (max-width: 900px) {
+    .statistics {
+        padding: 6rem 3rem;
+    
+        h1 {
+            margin-bottom: 80px;
+        }
+    
+        div {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .statistics {
+        padding: 6rem 1.5rem;
+    
+        h1 {
+            margin-bottom: 80px;
+        }
+    
+        div {
+            flex-wrap: wrap;
+            width: 100%;
+        }
     }
 }

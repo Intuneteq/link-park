@@ -27,8 +27,8 @@ const Navbar = () => {
         <li className="drop">
             Student
           <div className="dropdown">
-            <p><Link to=''>{user.student}</Link></p>
-            <p><Link to=''>{user.parent}</Link></p>
+            <p><Link to='/'>{user.student}</Link></p>
+            <p><Link to='/'>{user.parent}</Link></p>
           </div>
         </li>
         <li>

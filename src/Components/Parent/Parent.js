@@ -17,14 +17,14 @@ const Parent = () => {
             </div>
         </div>
         <div className='parent__content'>
-            <h1>Effectively <span>Track</span> your 
-            <br />wards learning Process
+            <h1 className='head-text'>Effectively <span>Track</span> your 
+            wards learning Process
             </h1>
-            <p>With simplified medium, upload learning 
-            <br />resources and track all of your students
-            <br />learning process.
+            <p className='p-text'>With simplified medium, upload learning 
+            resources and track all of your students
+            learning process.
             </p>
-            <button type='button' className='btn'>Start</button>
+            <button type='button' className='btn-primary'>Start</button>
         </div>
     </div>
   )
