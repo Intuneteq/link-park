@@ -1,12 +1,12 @@
 .parent {
   padding: 146px 6.25rem 227px;
+  gap: 30px;
 }
 
 .parent__img {
-  width: 400px;
-  height: 269px;
+  width: 583px;
+  height: 280px;
   position: relative;
-
   div {
     position: absolute;
     img {
@@ -18,22 +18,26 @@
 }
 
 .parent__img-img {
-  width: 330px;
+  width: 430px;
+  border-radius: 10px;
   z-index: 5;
-  top: 20%;
-  left: 5%;
+  top: 10%;
+  left: 10%;
 }
 
 .parent__img-box {
-  width: 300px;
-  height: 220px;
-  top: 5%;
-  left: 0;
+  width: 400px;
+  height: 275px;
+  border-radius: 10px;
+  top: 0;
+  left: 6%;
   background-color: #6184d8;
   z-index: 0;
 }
 
 .parent-img-parent {
+  width: 583px;
+  height: 343px;
   left: 0;
   bottom: 0;
   z-index: 10;
@@ -100,6 +104,7 @@
   
     p {
       margin-bottom: 20px;
+      width: 100%;
     }
   }
   
@@ -108,18 +113,30 @@
 
 @media screen and (max-width: 550px) {
   .parent {
-    padding: 3rem 1.5rem;
+    padding: 7rem 1.5rem 3rem;
   }
   
   .parent__img {
-    width: 100%;
+    max-width: 100%;
     height: 220px;
   }
   
   .parent__img-box {
-    width: 95%;
-    height: 200px;
-    top: 5%;
+    width: 70%;
+    height: 170px;
+    top: 0;
+    left: 0;
+  }
+
+  .parent__img-img {
+    width: 70%;
+    top: 10%;
+    left: 10%;
+  }
+
+  .parent-img-parent {
+    width: 90%;
+    left: 0;
   }
   
 }

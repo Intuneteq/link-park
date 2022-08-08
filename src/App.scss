@@ -32,7 +32,7 @@
 
 .btn-primary {
   background: var(--primary-color);
-  color: white;
+  color: #ffff;
   width: 7rem;
   height: 3rem;
   border: none;
@@ -41,6 +41,13 @@
 
   font-size: 1rem;
   font-weight: 400;
+  transition: 0.3s all ease-in;
+
+  &:hover {
+    background-color: #ffff;
+    color: var(--btn-blue);
+    box-shadow: 0 3px 5px #888888;
+  }
 }
 
 .btn-secondary {
@@ -59,6 +66,13 @@
 
   font-size: 1rem;
   font-weight: 400;
+
+  &:hover {
+    background-color: white;
+    font-weight: 500;
+    border: none;
+    box-shadow: 0, 10px, 5px rgba(0, 0, 0, 0.3);
+  }
 }
 
 .head-text {

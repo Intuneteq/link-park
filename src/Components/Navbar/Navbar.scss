@@ -23,10 +23,15 @@ nav {
       color: var(--black-color);
       font-weight: 500;
       font-size: 18px;
+
+      &:hover {
+        border-bottom: 1px solid black;
+      }
     }
 
     .dropdown{
       display: none;
+      cursor: pointer;
    
 
       p{
@@ -40,6 +45,7 @@ nav {
     background-color: white;
     border-radius: 5px;
     padding: 10px 0;
+    cursor: pointer;
   }
 }
 
@@ -59,6 +65,14 @@ nav {
       border-radius: 10px;
       color: var(--primary-color);
       padding: 11px 17px;
+      transition: 0.5s all ease-in;
+
+      &:hover {
+        background-color: white;
+        font-weight: 500;
+        border: 1px solid white;
+        box-shadow: 0 2px 5px #888888;
+      }
   }
 }
 

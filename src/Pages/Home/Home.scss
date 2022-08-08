@@ -1,12 +1,7 @@
 .home {
     width: 100%;
-    
-}
-
-.home::after {
-    background: url('../../Assets/background.svg');
-    // background-repeat: no-repeat;
-    // background-repeat: repeat-y;
-    // background-size: cover;
-    // opacity: 0.2;
+    background: url('../../Assets/homebackground.svg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }

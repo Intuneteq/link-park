@@ -22,7 +22,7 @@ const Parent = () => {
             </h1>
             <p className='p-text'>With simplified medium, upload learning 
             resources and track all of your students
-            learning process.
+            <br></br>learning process.
             </p>
             <button type='button' className='btn-primary'>Start</button>
         </div>
