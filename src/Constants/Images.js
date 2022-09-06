@@ -4,6 +4,8 @@ import school from "../Assets/school.svg";
 import Parent from '../Assets/Parent.svg';
 import Rectangle from '../Assets/Rectangle.svg';
 import schoolGirl from '../Assets/schoolGirl.svg';
+import profile from '../Assets/profile.png';
+import logo from '../Assets/logo.png'
 
 const Images = {
     headerphoto,
@@ -12,6 +14,8 @@ const Images = {
     Parent,
     Rectangle,
     schoolGirl,
+    profile,
+    logo
 }
 
 export default Images;
