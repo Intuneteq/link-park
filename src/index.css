@@ -22,7 +22,7 @@ body {
   --black-color: #333333;
   --black-color-secondary: #3A3A3A;
   --btn-blue: #6184D8;
-  --secondary-color: #F0EFF6;
+  --secondary-color: rgb(240, 239, 246);
   --white-color: #FFFFFF;
   --purple-color: #F6F1FF;
 }

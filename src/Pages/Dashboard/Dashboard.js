@@ -1,11 +1,14 @@
 import React from "react";
+// import { Link } from "react-router-dom";
 import { RiBook3Fill, RiHome3Fill } from "react-icons/ri";
 import { BsBook, BsSearch, BsFillPeopleFill, BsChatText } from "react-icons/bs";
-import { FiSettings } from "react-icons/fi";
+// import { FiSettings } from "react-icons/fi";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import { IoMdNotifications } from "react-icons/io";
 
 import "./Dashboard.scss";
 import { Images } from "../../Constants";
+import Calender from "../../Components/Calender/Calender";
 
 const Dashboard = () => {
   return (
@@ -28,12 +31,19 @@ const Dashboard = () => {
             <div className="app__flex">
               <BsChatText />
             </div>
-            <div className="app__flex">
+
+            {/* <div className="app__flex">
               <FiSettings />
-            </div>
+            </div> */}
           </div>
-          <div className="board__nav-user app__flex">
-            <img src={Images.profile} alt="profile" />
+          <div className="app__flex">
+            <div className="board__nav-user app__flex">
+              <img src={Images.profile} alt="profile" />
+            </div>
+            <section>
+              <IoMdNotifications />
+              <span className="app__flex">1</span>
+            </section>
           </div>
         </div>
         <div className="board__content">
@@ -43,12 +53,14 @@ const Dashboard = () => {
           </div>
           <div className="board__content-subject">
             <div className="subject-head app__flex-2">
-              <h6>My Progress</h6>
-              <div>
-                <span>
+              <h4 className="app__flex">
+                My Progress <span className="app__flex">4</span>
+              </h4>
+              <div className="app__flex-2">
+                <span className="app__flex">
                   <HiChevronLeft />
                 </span>
-                <span>
+                <span className="app__flex">
                   <HiChevronRight />
                 </span>
               </div>
@@ -71,38 +83,50 @@ const Dashboard = () => {
           <div className="board__content-activity app__flex-2">
             <div className="activity-activity activity">
               <div className="app__flex-2">
-                <h6>Activity</h6>
+                <h4 className="app__flex">
+                  Activity <span className="app__flex">4</span>
+                </h4>
                 <span class="material-symbols-outlined">tune</span>
               </div>
               <section>
                 <div>
-                  <span><BsSearch />
-                    <input type="text" />
+                  <span className="app__flex">
+                    <BsSearch />
+                    <input type="text" placeholder="Search Activity" />
                   </span>
-                  <div></div>
                 </div>
-                <div></div>
+                <div>something</div>
+                <div>something</div>
               </section>
             </div>
             <div className="activity-subjects activity">
               <div className="app__flex-2">
-                <h6>Subjects</h6>
+                <h4 className="app__flex">
+                  Subjects <span className="app__flex">4</span>
+                </h4>
                 <span class="material-symbols-outlined">tune</span>
               </div>
               <section>
                 <div>
-                  <span><BsSearch />
-                    <input type="text" />
+                  <span className="app__flex">
+                    <BsSearch />
+                    <input type="text" placeholder="Search Subject" />
                   </span>
-                  <div></div>
+                  <div>something</div>
                 </div>
-                <div></div>
+                <div>something</div>
               </section>
             </div>
           </div>
         </div>
-        <div className="board__schedule app__flex">
-          <p>schedule</p>
+        <div className="board__schedule column-flex">
+          <section>
+            <IoMdNotifications />
+            <span className="app__flex">1</span>
+          </section>
+          <div>
+            <Calender />
+          </div>
         </div>
       </div>
     </div>
