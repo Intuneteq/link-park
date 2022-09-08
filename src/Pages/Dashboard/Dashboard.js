@@ -86,7 +86,7 @@ const Dashboard = () => {
                 <h4 className="app__flex">
                   Activity <span className="app__flex">4</span>
                 </h4>
-                <span class="material-symbols-outlined">tune</span>
+                <span className="material-symbols-outlined">tune</span>
               </div>
               <section>
                 <div>
@@ -104,7 +104,7 @@ const Dashboard = () => {
                 <h4 className="app__flex">
                   Subjects <span className="app__flex">4</span>
                 </h4>
-                <span class="material-symbols-outlined">tune</span>
+                <span className="material-symbols-outlined">tune</span>
               </div>
               <section>
                 <div>
