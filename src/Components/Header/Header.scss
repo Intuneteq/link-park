@@ -7,7 +7,7 @@
     flex-direction: column;
 
     h1 {
-        width: 340px;
+        max-width: 25rem;
         color: var(--black-color-secondary);
         margin-bottom: 7px;
 
@@ -73,6 +73,7 @@
     
         h1 {
             width: 100%;
+            max-width: 100%;
             text-align: left;
         }
     

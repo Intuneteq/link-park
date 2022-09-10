@@ -6,9 +6,6 @@ import { Images } from "../../Constants";
 const School = () => {
   return (
     <div className="school">
-      <div className="top-img">
-        <img src={Images.school} alt="alt" />
-      </div>
       <div className="app__flex gap">
         <div className="school__img">
           <img src={Images.schoolGirl} alt="alt" />

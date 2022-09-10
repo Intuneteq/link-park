@@ -1,6 +1,13 @@
 nav {
-  padding: 2.8rem 6.25rem;
+  padding: 1rem 6.25rem;
   width: 100%;
+  height: 10%;
+  // border: 1px solid red;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 .nav__logo {
@@ -16,38 +23,26 @@ nav {
 
   li {
     list-style: none;
+    font-weight: 600;
+    color: var(--white-color);
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 1.125rem;
+    cursor: pointer;
 
     a {
       text-decoration: none;
-      text-transform: capitalize;
-      color: var(--black-color);
-      font-weight: 500;
-      font-size: 18px;
+      color: var(--white-color);
+      transition: 0.3s all ease-in-out;
 
       &:hover {
-        border-bottom: 1px solid black;
+        font-weight: 700;
+        padding: 0 5px 5px;
+        border-bottom: 2px solid black;
       }
     }
-
-    .dropdown{
-      display: none;
-      cursor: pointer;
-   
-
-      p{
-        padding: 5px 0;
-      }
     }
   }
-  .drop:hover .dropdown{
-    display: block;
-    position: absolute;
-    background-color: white;
-    border-radius: 5px;
-    padding: 10px 0;
-    cursor: pointer;
-  }
-}
 
 .nav__user {
   gap: 36px;
@@ -55,38 +50,142 @@ nav {
   a {
     text-decoration: none;
     text-transform: capitalize;
-    color: var(--black-color);
-    font-weight: 500;
-    font-size: 18px;
+    color: var(--white-color);
+    font-weight: 600;
+    font-size: 1.125rem;
+    transition: 0.3s all ease-in-out;
+
+    &:hover {
+      font-weight: 700;
+      padding: 0 5px 5px;
+      border-bottom: 2px solid var(--black-color);
+    }
   }
 
-  .sign-up {
-      border: 1px solid var(--primary-color);
-      border-radius: 10px;
-      color: var(--primary-color);
-      padding: 11px 17px;
-      transition: 0.5s all ease-in;
+  #sign-up {
+    padding: 8px 17px;
+    color: var(--white-color);
+    border: 1px solid var(--color-sherbet);
+    border-radius: 20px;
+    transition: 0.3s all ease-in-out;
 
-      &:hover {
-        background-color: white;
-        font-weight: 500;
-        border: 1px solid white;
-        box-shadow: 0 2px 5px #888888;
-      }
+    &:hover {
+      color: var(--white-color);
+      background-color: var(--color-sherbet);
+      font-weight: 700;
+      border: none;
+    }
   }
+}
+
+.nav__menu {
+  display: none;
 }
 
 @media screen and (max-width: 900px) {
   nav {
-    padding: 2.8rem 3rem;
+    padding: 1rem 3rem;
   }
   .nav__links {
     display: none;
   }
+
+  .nav__user {
+    display: none;
+  }
+
+  .nav__menu {
+    display: block;
+
+    width: 35px;
+    height: 35px;
+    background-color: var(--color-lilac);
+    color: var(--color-dark-down);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 30%;
+    border-bottom-left-radius: 30%;
+
+    position: relative;
+    svg {
+      width: 60%;
+      height: 60%;
+      color: white;
+    }
+    div {
+      color: black;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 5;
+
+      width: 100%;
+      height: 100vh;
+
+      // background-color: var(--white-color);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-end;
+
+
+
+      ul {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        height: 70vh;
+        list-style: none;
+        margin: 0;
+        padding: 30px;
+        width: 100%;
+        border-bottom-right-radius: 75%;
+        line-height: 70px;
+        box-shadow: 0 5px 20px rgba(168, 168, 168, 0.15);
+
+        li {
+          font-weight: 600;
+          font-size: 1.5rem;
+          transition: 0.3s all ease-in-out;
+        }
+      }
+
+      div {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        position: relative;
+        top: 15%;
+        right: 40%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        background-color: var(--primary-color);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+
+        svg {
+          width: 70%;
+          height: 70%;
+          font-weight: 900;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 550px) {
-  nav {
-    padding: 2.8rem 1.5rem;
+  .nav__menu {
+    div {
+      ul {
+        line-height: 60px;
+        border-bottom-right-radius: 70%;
+      }
+    }
   }
 }

@@ -8,11 +8,7 @@ const Parent = () => {
   return (
     <div className='app__flex-4 parent'>
         <div className='parent__img'>
-            <div className='parent__img-box' />
-            <div className='parent__img-img'>
-                <img src={Images.Rectangle} alt="alt" />
-            </div>
-            <div className='parent-img-parent'>
+            <div>
                 <img src={Images.Parent} alt="alt" />
             </div>
         </div>

@@ -1,9 +1,9 @@
 import React from 'react';
 
 import './Header.scss';
-import { Images } from '../../Constants';
 
 const Header = () => {
+
   return (
     <div className='header app__flex-2'>
         <div className='header__content app__flex-3'>
@@ -18,7 +18,7 @@ const Header = () => {
         <div className='header__img'>
             <div className='header__img-blob'></div>
             <div className='header__img-img'>
-                <img src={Images.headerphoto} alt="headphoto" />
+                <img src="https://res.cloudinary.com/intuneteq/image/upload/v1662792449/link-park/headerphoto_y3x9qz.svg" alt="alt" />
             </div>
         </div>
     </div>

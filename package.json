@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chakra-ui/react": "^2.3.2",
     "@cloudinary/react": "^1.4.2",
     "@cloudinary/url-gen": "^1.8.6",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
     "@reduxjs/toolkit": "^1.8.3",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",

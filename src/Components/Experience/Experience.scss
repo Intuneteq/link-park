@@ -1,11 +1,14 @@
 .experience {
     padding: 3.75rem 6.25rem 3.75rem;
-    background-color:rgba(81, 137, 250, 0.5);
+    background-color:var(--color-sherbet);
+    // background-color: rgb(44, 42, 50, 0.8);
 
     h1 {
         text-align: center;
         margin-bottom: 45px;
-        color: #ffffff;
+        letter-spacing: 5px;
+        -webkit-text-stroke: 3px white;
+        -webkit-text-fill-color: var(--color-sherbet);
     }
 }
 
@@ -18,6 +21,13 @@
         height: 240px;
         border-radius: 19.2px;
         border: 4.8px solid #AFB1B6;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+            border-radius: 15px;
+        }
     }
 
     p {

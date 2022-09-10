@@ -1,12 +1,13 @@
 .statistics {
     background: rgba(31, 45, 70, 0.8);
-    padding: 5.6rem 6.25rem 16.9rem;
-    color: #ffffff;
+    padding: 3.75rem 6.25rem;
+    color: var(--white-color);
 
     h1 {
         text-align: center;
-        margin-bottom: 166px;
-        color: #ffffff;
+        margin-bottom: 6rem;
+        color: var(--white-color);
+        font-style:oblique;
     }
 
     div {
@@ -22,7 +23,7 @@
         font-weight: 700;
         font-size: 35px;
         text-align: center;
-        color: #ffffff;
+        color: var(--white-color);
     }
 
     p {
