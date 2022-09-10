@@ -37,8 +37,8 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="nav__user app__flex">
-        <Link to="/Login">Login</Link>
-        <Link className="sign-up" to="/">Sign up</Link>
+        <Link to="/selectschool">Login</Link>
+        <Link className="sign-up" to="/selectschool">Sign up</Link>
       </div>
     </nav>
   );

@@ -5,7 +5,9 @@ import Parent from '../Assets/Parent.svg';
 import Rectangle from '../Assets/Rectangle.svg';
 import schoolGirl from '../Assets/schoolGirl.svg';
 import profile from '../Assets/profile.png';
-import logo from '../Assets/logo.png'
+import logo from '../Assets/logo.png';
+import reading from '../Assets/reading.jpg' ;
+
 
 const Images = {
     headerphoto,
@@ -15,7 +17,8 @@ const Images = {
     Rectangle,
     schoolGirl,
     profile,
-    logo
+    logo,
+    reading,
 }
 
 export default Images;
