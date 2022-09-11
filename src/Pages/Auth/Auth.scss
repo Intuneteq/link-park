@@ -6,9 +6,8 @@
     margin: auto;
     box-shadow: rgb(0 0 0 / 30%) 0px 2px 6px;
     // margin-top: 50px;
-    // padding: auto;
     border-radius: 10px;
-    background: url('../../Assets/homebackground.svg'); 
+    // background: url('../../Assets/homebackground.svg'); 
 
     
     .nav{
@@ -71,15 +70,16 @@
 
 // ---------------------signup----------------------------
 .bbb{
-    background-color: whitesmoke;
+    // background-color: whitesmoke;
     width: 900px;
     height: 700px;
     margin: 50px auto;
     border-radius: 10px;
-    box-shadow: rgb(0 0 0 / 30%) 0px 2px 6px;
+    // box-shadow: rgb(0 0 0 / 30%) 0px 2px 6px;
+    border: 1px solid black;
     width: 100%; 
     max-height: 100vh;
-    background: url('../../Assets/homebackground.svg');
+    // background: url('../../Assets/homebackground.svg');
 }
 .nav{
     display: flex;
@@ -137,11 +137,11 @@
 
 
 // .......................selectschool...............
-.school{
+.schoolSelect{
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
-    background: url('../../Assets/homebackground.svg');
+    // background: url('../../Assets/homebackground.svg');
 
     .btn-primary{
         margin: 20px;
