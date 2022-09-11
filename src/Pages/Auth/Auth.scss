@@ -5,9 +5,9 @@
     height: 700px;
     margin: auto;
     box-shadow: rgb(0 0 0 / 30%) 0px 2px 6px;
-    margin-top: 50px;
+    // margin-top: 50px;
     border-radius: 10px;
-    background: url('../../Assets/homebackground.svg'); 
+    // background: url('../../Assets/homebackground.svg'); 
 
     
     .nav{
@@ -78,7 +78,7 @@
     box-shadow: rgb(0 0 0 / 30%) 0px 2px 6px;
     width: 100%; 
     max-height: 100vh;
-    background: url('../../Assets/homebackground.svg');
+    // background: url('../../Assets/homebackground.svg');
 }
 .nav{
     display: flex;
@@ -136,11 +136,11 @@
 
 
 // .......................selectschool...............
-.school{
+.schoolSelect{
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
-    background: url('../../Assets/homebackground.svg');
+    // background: url('../../Assets/homebackground.svg');
 
     .btn-primary{
         margin: 20px;

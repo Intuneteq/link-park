@@ -5,7 +5,7 @@ import './Auth.scss';
 
 const SelectSchool = () => {
   return (
-    <div className='school app__flex'>
+    <div className='schoolSelect app__flex'>
         <h1>WELCOME TO LINK PARK</h1>
         <p>Select School:</p>
         <select>
