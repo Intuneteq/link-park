@@ -2,7 +2,7 @@ import React from 'react';
 import { Images } from '../../Constants';
 import { Link } from 'react-router-dom';
 
-import './Auth.scss;'
+import './Auth.scss';
 
 const SignUp = () => {
   return (

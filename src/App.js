@@ -17,11 +17,8 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/fullname/dashboard" element={<Dashboard />} />
-<<<<<<< HEAD
         {/* <Route path= "/calender" element={<Calender />} /> */}
-=======
         <Route path="/selectschool" element={ <SelectSchool />} />
->>>>>>> leeny
       </Routes>
     </div>
   );
