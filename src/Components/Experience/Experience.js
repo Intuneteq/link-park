@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./Experience.scss";
-import { Images } from '../../Constants';
+import { Images } from "../../Constants";
 
 const Experience = () => {
   return (
