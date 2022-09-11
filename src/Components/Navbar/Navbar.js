@@ -71,10 +71,15 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="nav__user app__flex">
+<<<<<<< HEAD
         <Link to="/Login">Login</Link>
         <Link id="sign-up" to="/">
           Sign up
         </Link>
+=======
+        <Link to="/selectschool">Login</Link>
+        <Link className="sign-up" to="/selectschool">Sign up</Link>
+>>>>>>> leeny
       </div>
 
       <section className="nav__menu">

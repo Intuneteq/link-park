@@ -9,6 +9,8 @@ import logo from '../Assets/logo.png';
 import improving from '../Assets/improving.jpg';
 import easy from '../Assets/easy.jpg';
 import enjoy from '../Assets/enjoy.jpg';
+import reading from '../Assets/reading.jpg' ;
+
 
 const Images = {
     headerphoto,
@@ -22,6 +24,7 @@ const Images = {
     improving,
     easy,
     enjoy,
+    reading,
 }
 
 export default Images;
