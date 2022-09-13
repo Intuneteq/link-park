@@ -24,7 +24,7 @@ nav {
   li {
     list-style: none;
     font-weight: 600;
-    color: var(--white-color);
+    color: var(--black-color);
     text-transform: capitalize;
     font-weight: 600;
     font-size: 1.125rem;
@@ -32,7 +32,7 @@ nav {
 
     a {
       text-decoration: none;
-      color: var(--white-color);
+      color: var(--black-color);
       transition: 0.3s all ease-in-out;
 
       &:hover {
@@ -42,6 +42,47 @@ nav {
       }
     }
   }
+
+  div {
+    position: relative;
+  }
+}
+
+.student-menu {
+  position: absolute;
+  top: 40px;
+  
+  background-color: var(--white-color);
+  border-radius: 5px;
+  box-shadow: 0 1px 10px var(--black-color);
+  -moz-box-shadow: 0px 1px 10px var(--black-color);
+    -webkit-box-shadow: 0px 1px 10px var(--black-color);
+
+  z-index: 500;
+}
+
+
+.student-menu li{
+  padding: 0 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.5s all;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.student-menu li:first-of-type{
+  border-radius: 5px 5px 0 0;
+}
+.student-menu li:last-of-type{
+  border-radius: 0 0 5px 5px ;
+}
+.student-menu li:not(:last-of-type){
+  border-bottom: 1px solid #fff;
+}
+.student-menu li:hover{
+  background-color: var(--primary-color);
+  color: var(--white-color);
 }
 
 .nav__user {
@@ -50,7 +91,7 @@ nav {
   a {
     text-decoration: none;
     text-transform: capitalize;
-    color: var(--white-color);
+    color: var(--black-color);
     font-weight: 600;
     font-size: 1.125rem;
     transition: 0.3s all ease-in;
@@ -64,7 +105,7 @@ nav {
 
   #sign-up {
     padding: 8px 17px;
-    color: var(--white-color);
+    color: var(--black-color);
     border: 1px solid var(--color-sherbet);
     border-radius: 20px;
     transition: 0.3s ease-in-out;
@@ -230,8 +271,8 @@ nav {
   }
   
     .nav__menu {
-      width: 40px;
-      height: 40px;
+      width: 35px;
+      height: 35px;
       
       svg {
         width: 70%;
@@ -249,7 +290,7 @@ nav {
             line-height: 3.5rem;
 
             li {
-              font-size: 1.5rem;
+              font-size: 1.125rem;
               justify-content: flex-start;
             }
           }
@@ -268,7 +309,7 @@ nav {
             }
   
             .user-login {
-              font-size: 1.5rem;
+              font-size: 1.125rem;
             }
           }
         }
@@ -280,7 +321,7 @@ nav {
           border-radius: 50%;
   
           position: relative;
-          top: 15%;
+          top: 2%;
           right: 40%;
   
           color: var(--black-color);

@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Images } from "../../Constants";
+import MotionCard from "../../Cards/MotionCard";
 import "./Parent.scss";
 
 const Parent = () => {
@@ -27,4 +28,4 @@ const Parent = () => {
   );
 };
 
-export default Parent;
+export default MotionCard(Parent);

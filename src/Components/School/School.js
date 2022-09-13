@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 
 import "./School.scss";
 import { Images } from "../../Constants";
+import MotionCard from "../../Cards/MotionCard";
 
 const School = () => {
   return (
-    <div className="school">
+    <div className="school app__flex">
       <div className="app__flex gap">
         <div id="school__img">
           <img src={Images.schoolGirl} alt="alt" />
@@ -31,4 +32,4 @@ const School = () => {
   );
 };
 
-export default School;
+export default MotionCard(School);

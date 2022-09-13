@@ -2,6 +2,7 @@ import React from "react";
 
 import "./Experience.scss";
 import { Images } from "../../Constants";
+import MotionCard from "../../Cards/MotionCard";
 
 const Experience = () => {
   return (
@@ -31,4 +32,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default MotionCard(Experience);

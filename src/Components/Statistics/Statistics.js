@@ -1,10 +1,11 @@
 import React from 'react';
 
+import MotionCard from '../../Cards/MotionCard';
 import './Statistics.scss';
 
 const Statistics = () => {
   return (
-    <div className='statistics'>
+    <div className='statistics app__flex'>
         <h1 className='head-text'>Your Go-to platform for all learning activities</h1>
         <div className='app__flex'>
             <div className='statistics-content app__flex'>
@@ -32,4 +33,4 @@ const Statistics = () => {
   )
 }
 
-export default Statistics
+export default MotionCard(Statistics);

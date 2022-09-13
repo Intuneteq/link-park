@@ -1,5 +1,10 @@
 .school {
   padding: 3.75rem 0;
+  flex-direction: column;
+
+  flex: 1;
+  width: 100%;
+  min-height: 100vh;
 
   .gap {
     gap: 8rem;
@@ -9,7 +14,6 @@
 #school__img {
   height: 280px;
   width: 280px;
-  // border-radius: 50%;
   background-color: var(--primary-color);
   position: relative;
 

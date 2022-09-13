@@ -1,6 +1,10 @@
 .statistics {
+    flex: 1;
+    width: 100%;
+    min-height: 100vh;
+    flex-direction: column;
     background: rgba(31, 45, 70, 0.8);
-    padding: 3.75rem 6.25rem;
+    padding: 0 6.25rem;
     color: var(--white-color);
 
     h1 {
