@@ -45,7 +45,7 @@ const SignUp = () => {
 
   useEffect(() => {
     firstNameRef.current.focus();
-  }, []);  //focus on the first name on refresh
+  }, []); //focus on the first name on refresh
 
   useEffect(() => {
     setValidEmail(Email_REGEX.test(email));
@@ -114,7 +114,7 @@ const SignUp = () => {
       console.log(res?.accessToken);
       toast.success("login success");
       setSuccess(true);
-      navigate('/Login');
+      navigate("/Login");
 
       //clear state and controlled inputs
       //need value attrib on inputs for this
@@ -135,40 +135,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className='bbb app__flex'>
-      <div className='aaaa'>
-      <div className='nav'>
-        <img src={Images.logo} alt=''/>
-        <p>Already have an account? Sign in</p>
-      </div>
-      <div className='b'>
-        <h1>Create your Link Park account</h1>
-        <input type="text" placeholder='Full Name'/> <br/>
-        <input type="email" placeholder='Email'/> <br/>
-        <input type="password" placeholder='Password'/> <br/>
-        <input type="password" placeholder='Confirm Password' /> <br/>
-        <div className='DOB'>
-          <div>
-            <span>Class: </span>
-            <select>
-              <option value="">J.S.1</option>
-              <option value="">J.S.2</option>
-              <option value="">J.S.3</option>
-              <option value="">S.S.1</option>
-              <option value="">S.S.2</option>
-              <option value="">S.S.3</option>
-            </select>
-          </div>
-          <label for="birthday">D.O.B: </label>
-          <input type="date" id="birthday" name="birthday"></input>
-        </div>
-        <span>Guardian's Phone number: </span>
-          <br/>
-          <input type="tel" /> <br/>
-        <Link to='/fullname/dashboard'><button className='btn-primary'>Sign up</button></Link>
-      </div>
-      </div>
-    <div className="bbb">
+    <>
       <div className="nav">
         <img src={Images.logo} alt="" />
         <p>Already have an account? Sign in</p>
@@ -344,7 +311,7 @@ const SignUp = () => {
           </form>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
