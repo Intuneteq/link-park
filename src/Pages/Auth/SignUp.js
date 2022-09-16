@@ -6,7 +6,8 @@ import './Auth.scss';
 
 const SignUp = () => {
   return (
-    <div className='bbb'>
+    <div className='bbb app__flex'>
+      <div className='aaaa'>
       <div className='nav'>
         <img src={Images.logo} alt=''/>
         <p>Already have an account? Sign in</p>
@@ -29,15 +30,14 @@ const SignUp = () => {
               <option value="">S.S.3</option>
             </select>
           </div>
-          <div>
-            <label for="birthday">D.O.B: </label>
-            <input type="date" id="birthday" name="birthday"></input>
-          </div>
+          <label for="birthday">D.O.B: </label>
+          <input type="date" id="birthday" name="birthday"></input>
         </div>
-        <span>Guardian's Phone number </span>
+        <span>Guardian's Phone number: </span>
           <br/>
           <input type="tel" /> <br/>
         <Link to='/fullname/dashboard'><button className='btn-primary'>Sign up</button></Link>
+      </div>
       </div>
     </div>
   )
