@@ -1,174 +1,264 @@
 .offscreen {
-    position: absolute;
-    left: -9999px;
+  position: absolute;
+  left: -9999px;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .valid {
-    color: limegreen;
-    margin-left: 0.25rem;
+  color: limegreen;
+  margin-left: 0.25rem;
 }
 
 .invalid {
-    color: red;
-    margin-left: 0.25rem;
+  color: red;
+  margin-left: 0.25rem;
 }
 
 .errmsg {
-    background-color: lightpink;
-    color: firebrick;
-    font-weight: bold;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 // --------------------------------login-------------------------------
-.main{
-    width: 1000px;
-    height: 100%;
-    margin: auto;
-    box-shadow: rgb(0 0 0 / 30%) 0px 2px 6px;
-    // margin-top: 50px;
-    border-radius: 10px;
-    // background: url('../../Assets/homebackground.svg'); 
 
-    
-    .nav{
-        display: flex;
-        justify-content: space-between;
-        padding: 45px 50px;
-        img{
-            width: 250px;   
-            height: 40px;
-        }
-    }
-   .body{
-    display: flex;
-    justify-content: space-around;
-    // border: 1px solid black;
-    padding: 50px 0;
-
-        .email{
-            margin: 40px 0;
-            input{
-                width: 400px;
-                height: 40px;
-                border: none;
-                border-bottom: 1px solid black;
-            }
-            input:nth-child(1){
-                margin-bottom: 15px;
-            }
-            input:focus-within{
-                outline-style: none;
-                border-bottom: 1px solid #B4CAFF;
-            }
-        }
-        .remember{
-            display: flex;
-            gap: 75px;
-        }
-        .btn-primary{
-            width: 400px;
-            margin-top: 20px;
-        }
-        section{
-            img{
-                width: 400px;
-                border: none;
-            }
-       }
-    }
-    .foot{
-        display: flex;
-        justify-content: space-between;
-        margin: 20px 50px;
-    }
+.main-div {
+  height: 100vh;
+  width: 100%;
+  padding: 0 3rem;
 }
+.main {
+  width: 100%;
+  height: 700px;
+  box-shadow: rgb(0 0 0 / 60%) 0px 2px 6px;
+  border-radius: 10px;
 
-
-
-
-
-
-// ---------------------signup----------------------------
-.bbb{
-    background-color: whitesmoke;
-    width: 900px;
-    height: 90%;
-    margin: 50px auto;
-    border-radius: 10px;
-    box-shadow: rgb(0 0 0 / 30%) 0px 2px 6px;
-    width: 100%; 
-    // max-height: 100vh;
-    // background: url('../../Assets/homebackground.svg');
-}
-.nav{
+  .nav {
     display: flex;
     justify-content: space-between;
-    padding: 40px 20px;
+    padding: 2rem 10rem;
 
-
-
-    img{
-        width: 200px;
+    img {
+      object-fit: contain;
     }
-}
+  }
+  .body {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
 
-.b{
-    text-align: center;
+    .email {
+      margin: 40px 0;
 
-    input{
-        width: 500px;
+      .eyes {
+        position: relative;
+
+        svg {
+          position: absolute;
+          top: 10px;
+          right: 0;
+        }
+      }
+
+      input {
+        width: 100%;
         height: 40px;
-        margin: 15px 0;
         border: none;
         border-bottom: 1px solid black;
-        background-color: #FFFF;
-    }
-    
-    input:focus-within{
+      }
+      input:focus-within {
         outline-style: none;
+        border-bottom: 1px solid #b4caff;
+      }
     }
-
-    .DOB{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 0 400px;
-
-        input{
-            width: 100px;
-        }
+    .remember {
+      display: flex;
+      gap: 75px;
     }
+    .btn-primary {
+      width: 400px;
+      margin-top: 20px;
+    }
+    section {
+      img {
+        width: 400px;
+      }
+    }
+  }
+  .foot {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 10rem;
+  }
 }
 
+@media screen and (max-width: 900px) {
+  .main-div {
+    padding: 0 1.5rem;
+  }
+  .main {
+    .nav {
+      padding: 2rem 3rem;
+    }
 
+    .body {
+      justify-content: center;
+      gap: 5%;
+      padding: 50px 0;
 
+      form {
+        flex: 0.5;
+        max-width: 47.5%;
+        padding: 0 0.8rem;
+      }
 
+      .email {
+        input {
+          width: 90%;
+          height: 40px;
+        }
+      }
+      .remember {
+        gap: 35px;
+      }
+      .login-btn {
+        width: 60%;
+        height: 50px;
+      }
+      section {
+        flex: 0.4;
+        max-width: 47.5%;
+      }
+    }
+    .foot {
+      padding: 20px 50px;
+    }
+  }
+}
+@media screen and (max-width: 550px) {
+  .main-div {
+    padding: 0 1rem;
+  }
+  .main {
+    padding: 0 10px;
 
+    .nav {
+      padding: 2rem 0;
 
+      q {
+        display: none;
+      }
+    }
+    .body {
+      form {
+        width: 100%;
+        max-width: 100%;
+      }
 
+      .h {
+        font-size: 20px;
+      }
 
+      .email {
+        input {
+          width: 100%;
+          height: 40px;
+        }
+      }
+      .remember {
+      }
+      .login-btn {
+        width: 400px;
+      }
+      section {
+        img {
+          display: none;
+        }
+      }
+    }
+    .foot {
+      padding: 0.5rem;
+    }
+  }
+}
 
+// ---------------------signup----------------------------------
+.bbb {
+  height: 100vh;
+}
 
+.aaaa {
+  width: 900px;
+  height: 90%;
+  margin: 50px auto;
+  border-radius: 10px;
+  box-shadow: rgb(0 0 0 / 30%) 0px 2px 6px;
+  width: 100%;
+  // max-height: 100vh;
+  // background: url('../../Assets/homebackground.svg');
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 20px;
 
+  img {
+    width: 200px;
+  }
+}
 
+.b {
+  text-align: center;
 
+  input {
+    width: 500px;
+    height: 40px;
+    margin: 15px 0;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: #ffff;
+  }
 
+  input:focus-within {
+    outline-style: none;
+  }
 
+  .DOB {
+    // display: flex;
+    // justify-content: space-around;
+    // align-items: center;
+    // padding: 0 400px;
+    // border: 1px solid black;
+
+    input {
+      width: 400px;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .bbb {
+    height: 100vh;
+  }
+}
+// @media only screen and (max-width: 550px){
+//     .bbb{
+//     }
+// }
 
 // .......................selectschool...............
-.schoolSelect{
-    flex-direction: column;
-    width: 100%;
-    min-height: 100vh;
-    // background: url('../../Assets/homebackground.svg');
+.schoolSelect {
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  // background: url('../../Assets/homebackground.svg');
 
-    .btn-primary{
-        margin: 20px;
-    }
+  .btn-primary {
+    margin: 20px;
+  }
 }

@@ -45,7 +45,7 @@ const SignUp = () => {
 
   useEffect(() => {
     firstNameRef.current.focus();
-  }, []);  //focus on the first name on refresh
+  }, []); //focus on the first name on refresh
 
   useEffect(() => {
     setValidEmail(Email_REGEX.test(email));
@@ -114,7 +114,7 @@ const SignUp = () => {
       console.log(res?.accessToken);
       toast.success("login success");
       setSuccess(true);
-      navigate('/Login');
+      navigate("/Login");
 
       //clear state and controlled inputs
       //need value attrib on inputs for this
@@ -135,7 +135,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="bbb">
+    <>
       <div className="nav">
         <img src={Images.logo} alt="" />
         <p>Already have an account? Sign in</p>
@@ -311,7 +311,7 @@ const SignUp = () => {
           </form>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
