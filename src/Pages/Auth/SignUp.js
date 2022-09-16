@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { BsCheck } from "react-icons/bs";
 import { MdError } from "react-icons/md";
 import axios from "../../api/axios";
-import toast from "react-hot-toast";
+import { toast } from "react-hot-toast";
 
 import { Images } from "../../Constants";
 import "./Auth.scss";
