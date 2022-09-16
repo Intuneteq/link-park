@@ -1,7 +1,9 @@
 .experience {
+    flex: 1;
+    width: 100%;
+    min-height: 100vh;
     padding: 3.75rem 6.25rem 3.75rem;
     background-color:var(--color-sherbet);
-    // background-color: rgb(44, 42, 50, 0.8);
 
     h1 {
         text-align: center;
@@ -33,7 +35,7 @@
     p {
         font-weight: 500;
         font-size: 20px;
-        color: #ffffff;
+        color: var(--white-color);
     }
 }
 
@@ -46,7 +48,7 @@
 
         div {
             width: 100%;
-            flex-direction: column;
+            flex-wrap: wrap;
             gap: 40px;
         }
     
@@ -58,9 +60,10 @@
     
     .experience__body {
         gap: 10px !important;
+        
     
         div {
-            width: 80%;
+            width: 50%;
         }
     }
 }
@@ -68,5 +71,21 @@
 @media screen and (max-width: 550px) {
     .experience {
         padding: 3.75rem 1.5rem 3.75rem;
+
+        h1 {
+            font-size: 1.5rem;
+            -webkit-text-stroke: 1.5px white;
+        }
+    }
+
+    .experience__body {
+    
+        div {
+            width: 100%;
+        }
+
+        p {
+            font-weight: 800;
+        }
     }
 }

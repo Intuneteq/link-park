@@ -1,13 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./School.scss";
 import { Images } from "../../Constants";
+import MotionCard from "../../Cards/MotionCard";
 
 const School = () => {
   return (
-    <div className="school">
+    <div className="school app__flex">
       <div className="app__flex gap">
-        <div className="school__img">
+        <div id="school__img">
           <img src={Images.schoolGirl} alt="alt" />
         </div>
         <div className="school__content app__flex-3">
@@ -21,7 +23,7 @@ const School = () => {
           </p>
           <div className="btn-div">
           <button type="button" className="btn-primary">
-            Find School
+            <Link to='/selectschool'>Find School</Link>
           </button>
           </div>
         </div>
@@ -30,4 +32,4 @@ const School = () => {
   );
 };
 
-export default School;
+export default MotionCard(School);

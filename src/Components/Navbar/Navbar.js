@@ -1,27 +1,68 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { MdOutlineMenuBook } from "react-icons/md";
+import { FaUser } from "react-icons/fa";
 import { HiX } from "react-icons/hi";
-import {
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverBody,
-} from "@chakra-ui/react";
-import { motion } from "framer-motion";
-// import { CgMenuBoxed } from "react-icons/cg";
+import { CgArrowLongRight } from "react-icons/cg";
+import { TiThMenuOutline } from "react-icons/ti";
+import { motion, useCycle, AnimatePresence } from "framer-motion";
 
 import "./Navbar.scss";
+// import Images from '../../Constants';
 
 const Navbar = () => {
   const user = {
     student: "Student",
     parent: "Parent",
   };
+  const [isMenu, setIsMenu] = useState(false);
 
-  const [toggle, setToggle] = useState(false);
+  const menuVariants = {
+    open: {
+      opacity: 1,
+        clipPath: `circle(1000px at 40px 40px)`,
+      transition: {
+        duration: 5,
+      },
+    },
 
-  const initialFocusRef = React.useRef();
+    closed: {
+        clipPath: `circle(0 at 40px 40px)`,
+      transition: {
+        duration: 15,
+      },
+    },
+  };
+
+  const listVariant = {
+    open: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.4,
+        ease: [0.6, 0.05, -0.01, 0.9],
+      },
+    },
+
+    closed: {
+      y: 50,
+      opacity: 0,
+      transition: {
+        duration: 0.4,
+        ease: [0.6, 0.05, -0.01, 0.9],
+      },
+    },
+  };
+
+  const ulVariant = {
+    open: {
+      transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+    },
+    closed: {
+      transition: { staggerChildren: 0.05, staggerDirection: -1 },
+    },
+  };
+
+  const [isOpen, toggleOpen] = useCycle(false, true);
 
   return (
     <nav className="app__flex-2">
@@ -38,107 +79,96 @@ const Navbar = () => {
         <li>
           <Link to="/">Blog</Link>
         </li>
-        <Popover
-          initialFocusRef={initialFocusRef}
-          placement="bottom"
-          closeOnBlur={false}
-        >
-          <PopoverTrigger>
-            <li>Student</li>
-          </PopoverTrigger>
-          <PopoverContent
-            color="brand.200"
-            bg="brand.100"
-            border="0"
-            display="flex"
-            flex-direction="column"
-            alignItems="center"
-            justifyContent="center"
-            size="lg"
-          >
-            <PopoverBody>
-              <p>
-                <Link to="/">{user.student}</Link>
-              </p>
-              <p>
-                <Link to="/">{user.parent}</Link>
-              </p>
-            </PopoverBody>
-          </PopoverContent>
-        </Popover>
+      
+        <div className="app__flex">
+          <li
+          onMouseEnter={() =>setIsMenu(true)} 
+          >student</li>
+          <AnimatePresence>
+              {isMenu && (
+                <motion.ul 
+                  className="student-menu"
+                    initial={{opacity:0,y:"-50%"}}
+          animate={{opacity:1,y:"0%"}}
+          exit={{opacity:0,y:"-50%",transition:{duration:"0.35"}}}
+          transition={{type:"spring",stiffness:"100", duration:"0.75"}} 
+                onMouseEnter={() =>setIsMenu(true)} 
+                onMouseLeave={() => setIsMenu(false)}
+                >
+                <li>{user.student}</li>
+                <li>{user.parent}</li>
+              </motion.ul>
+              )}
+          </AnimatePresence>
+        </div>
         <li>
           <Link to="/">About us</Link>
         </li>
       </ul>
       <div className="nav__user app__flex">
         <Link to="/selectschool">Login</Link>
-        <Link className="sign-up" to="/selectschool">Sign up</Link>
+        <Link id="sign-up" to="/selectschool">
+          Sign up
+        </Link>
       </div>
 
-      <section className="nav__menu">
-        <MdOutlineMenuBook onClick={() => setToggle(true)} />
-        {toggle && (
-          <motion.div
-            initial={{ opacity: 0, x: -100, y: -100}}
-            animate={{ opacity: 1, x: 0, y: 0}}
-            transition={{
-              duration: 0.4,
-              delay: 0.5,
-              ease: "easeInOut",
-              staggerChildren: 0.5,
-            }}
-          >
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/">Programs</Link>
-              </li>
-              <li>
-                <Link to="/">Blog</Link>
-              </li>
-              <Popover
-                initialFocusRef={initialFocusRef}
-                placement="bottom"
-                closeOnBlur={false}
-              >
-                <PopoverTrigger>
-                  <li>Student</li>
-                </PopoverTrigger>
-                <PopoverContent
-                  color="brand.200"
-                  bg="brand.100"
-                  border="0"
-                  display="flex"
-                  flex-direction="column"
-                  alignItems="center"
-                  justifyContent="center"
-                  size="lg"
-                >
-                  <PopoverBody>
-                    <p>
-                      <Link to="/">{user.student}</Link>
-                    </p>
-                    <p>
-                      <Link to="/">{user.parent}</Link>
-                    </p>
-                  </PopoverBody>
-                </PopoverContent>
-              </Popover>
-              <li>
-                <Link to="/">About us</Link>
-              </li>
-            </ul>
+      <motion.section
+        className="nav__menu"
+        initial={false}
+        animate={isOpen ? "open" : "closed"}
+      >
+        <TiThMenuOutline onClick={() => toggleOpen()} />
+        {isOpen && (
+          <motion.div variants={menuVariants} className="nav__menu-body">
+            <article>
+              <motion.ul variants={ulVariant}>
+                <li className="app__flex" variants={listVariant}>
+                  <Link to="/">Home</Link>{" "}
+                  <span>
+                    <CgArrowLongRight />
+                  </span>
+                </li>
+                <li className="app__flex" variants={listVariant}>
+                  <Link to="/">Programs</Link>{" "}
+                  <span>
+                    <CgArrowLongRight />
+                  </span>
+                </li>
+                <li className="app__flex" variants={listVariant}>
+                  <Link to="/">Blog</Link>{" "}
+                  <span>
+                    <CgArrowLongRight />
+                  </span>
+                </li>
+                
+                <li className="app__flex">
+                  <Link to="/">About us</Link>{" "}
+                  <span>
+                    <CgArrowLongRight />
+                  </span>
+                </li>
+                
+              </motion.ul>
+              <section className="app__flex" variants={listVariant}>
+                <div className="app__flex user-user">
+                  <FaUser />
+                </div>
+                <motion.div className="user-login app__flex">
+                  <Link to="/selectschool">Login</Link>
+                  <Link to="/selectschool">Sign up</Link>
+                </motion.div>
+              </section>
+            </article>
             <motion.div
               whileTap={{ scale: 1.3 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="exit app__flex"
             >
-              <HiX onClick={() => setToggle(false)} />
+              <HiX onClick={() => toggleOpen()} />
             </motion.div>
           </motion.div>
         )}
-      </section>
+      </motion.section>
     </nav>
   );
 };
