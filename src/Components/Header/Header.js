@@ -13,8 +13,9 @@ import { focusOn } from "@cloudinary/url-gen/qualifiers/gravity";
 import { FocusOn } from "@cloudinary/url-gen/qualifiers/focusOn";
 
 import "./Header.scss";
+import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({handleStudent}) => {
   const cld = new Cloudinary({
     cloud: {
       cloudName: "intuneteq",
@@ -40,12 +41,11 @@ const Header = () => {
           by teachers and permitting parents follow up.
         </p>
         <div className="app__flex-3">
-          <button type="button" className="btn-primary">
+          <button type="button" className="btn-primary" onClick={handleStudent}>
             Get Started
           </button>
           <button type="button" className="btn-secondary">
-            {" "}
-            Find School
+            <Link to="/selectschool">Find School</Link>
           </button>
         </div>
       </div>
