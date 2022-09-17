@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { Images } from "../../Constants";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { toast } from "react-hot-toast";
+import { AdvancedImage } from "@cloudinary/react";
+import { Cloudinary } from "@cloudinary/url-gen";
 
 import "./Auth.scss";
 import axios from "../../api/axios";
@@ -12,7 +14,7 @@ const LOGIN_URL = "/api/auth";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { setAuth } = useAuth();  //using the authcontext
+  const { setAuth } = useAuth(); //using the authcontext
 
   const emailRef = useRef();
   const errRef = useRef();
@@ -50,8 +52,7 @@ const Login = () => {
       setEmail("");
       setPassword("");
       toast.success(response.success);
-      navigate('/fullname/dashboard');
-
+      navigate("/fullname/dashboard");
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");
@@ -66,9 +67,17 @@ const Login = () => {
     }
   };
 
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: "intuneteq",
+    },
+  });
+  const myImage = cld.image("v1663392950/link-park/Link-park-logo_e8hgxr.png");
+  myImage.format("auto").quality("auto");
+
   return (
-    <div className="main-div app__flex">
-      <div className="main">
+    <div className="login app__flex">
+      <div className="login__main app__flex">
         <p
           ref={errRef}
           className={errMsg ? "errmsg" : "offscreen"}
@@ -76,8 +85,10 @@ const Login = () => {
         >
           {errMsg}
         </p>
-        <div className="nav">
-          <img src={Images.logo} alt="" />
+        <div className="login__main-nav app__flex-2">
+          <article>
+            <AdvancedImage cldImg={myImage} />
+          </article>
           <div>
             <q>
               Education is what remains after <br /> one has forgotten
@@ -85,23 +96,25 @@ const Login = () => {
             </q>
           </div>
         </div>
-        <div className="body">
-          <form onSubmit={handleSubmit}>
-            <div className="h">
-              <h1>Welcome back!</h1>
-              <p>Please login to your account.</p>
+        <div className="login__main-body app__flex-4">
+          <form onSubmit={handleSubmit} className="app__flex">
+            <div className="body-head column__flex">
+              <h1 className="head-text">Welcome back!</h1>
+              <p className="p-text">Please login to your account.</p>
             </div>
-            <div className="email">
-              <label htmlFor="email" />
-              <input
-                type="email"
-                placeholder="Email"
-                id="email"
-                ref={emailRef}
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
-                required
-              />{" "}
+            <div className="body-input">
+              <div>
+                <label htmlFor="email" />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  id="email"
+                  ref={emailRef}
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                  required
+                />
+              </div>
               <br />
               <br />
               <div className="eyes">
@@ -118,27 +131,27 @@ const Login = () => {
             </div>
             <div className="remember">
               <span>
-                <input type="checkbox"></input> Remember me
+                <input type="checkbox"/> Remember me
               </span>
               <br />
               <p>Forgot password?</p>
             </div>
             {/* <Link to="/fullname/dashboard"> */}
-              <div className="app__flex">
-                <button className="btn-primary login-btn">Login</button>
-              </div>
+            <div className="app__flex">
+              <button className="btn-primary login-btn">Login</button>
+            </div>
             {/* </Link> */}
           </form>
-          <section>
+          <section className="app__flex">
             <img src={Images.reading} alt="" />
           </section>
         </div>
-        <div className="foot">
-          <span>
-            Don't have an account yet?{" "}
-            <Link to="/selectschool">Create a Link Park account</Link>
-          </span>
-          <p>Got Questions? +2349020551592</p>
+        <div className="foot app__flex-2">
+          <p className="p-text">
+            Don't have an account yet?
+            <Link to="/selectschool"> Create a Link Park account</Link>
+          </p>
+          <p className="p-text">Got Questions? +2349020551592</p>
         </div>
       </div>
     </div>

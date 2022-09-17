@@ -27,161 +27,266 @@
 
 // --------------------------------login-------------------------------
 
-.main-div {
+.login {
   height: 100vh;
   width: 100%;
   padding: 0 3rem;
 }
-.main {
+.login__main {
   width: 100%;
   height: 700px;
   box-shadow: rgb(0 0 0 / 60%) 0px 2px 6px;
   border-radius: 10px;
+  flex-direction: column;
 
-  .nav {
-    display: flex;
-    justify-content: space-between;
+  .login__main-nav {
     padding: 2rem 10rem;
+    width: 100%;
 
-    img {
-      object-fit: contain;
+    article {
+      width: 5rem;
+      height: 5rem;
+
+      img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
-  .body {
-    display: flex;
-    justify-content: space-around;
-    padding: 50px 0;
+  .login__main-body {
+    width: 100%;
+    padding: 2rem;
 
-    .email {
-      margin: 40px 0;
+    form {
+      flex-direction: column;
+      width: 100%;
+      flex: 0.5;
 
-      .eyes {
-        position: relative;
+      .body-head {
+        width: 100%;
+        text-align: center;
+      }
 
-        svg {
-          position: absolute;
-          top: 10px;
-          right: 0;
+      .body-input {
+        margin: 40px 0;
+        width: 55%;
+
+        div {
+          input {
+            width: 100%;
+            height: 40px;
+            border: none;
+            border-bottom: 1px solid black;
+          }
+          input:focus-within {
+            outline-style: none;
+            border-bottom: 1px solid #b4caff;
+          }
+        }
+
+        .eyes {
+          position: relative;
+
+          svg {
+            position: absolute;
+            top: 10px;
+            right: 0;
+          }
         }
       }
 
-      input {
-        width: 100%;
-        height: 40px;
-        border: none;
-        border-bottom: 1px solid black;
+      .remember {
+        display: flex;
+        gap: 75px;
       }
-      input:focus-within {
-        outline-style: none;
-        border-bottom: 1px solid #b4caff;
-      }
-    }
-    .remember {
-      display: flex;
-      gap: 75px;
-    }
-    .btn-primary {
-      width: 400px;
-      margin-top: 20px;
-    }
-    section {
-      img {
+
+      .login-btn {
         width: 400px;
+        margin-top: 20px;
+      }
+    }
+
+    section {
+      width: 25rem;
+      height: 25rem;
+      flex: 0.5;
+
+      img {
+        width: 100%;
+        object-fit: contain;
+        height: 100%;
       }
     }
   }
+
   .foot {
-    display: flex;
-    justify-content: space-between;
     padding: 1rem 10rem;
+    width: 100%;
+
+    a {
+      font-weight: 200;
+    }
+    a:hover {
+      color: var(--primary-color);
+      font-weight: 500;
+    }
   }
 }
 
 @media screen and (max-width: 900px) {
-  .main-div {
-    padding: 0 1.5rem;
+  .login {
+    height: 100vh;
+    width: 100%;
+    padding: 0;
   }
-  .main {
-    .nav {
+
+  .login__main {
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+    border-radius: 0;
+
+    .login__main-nav {
       padding: 2rem 3rem;
-    }
-
-    .body {
-      justify-content: center;
-      gap: 5%;
-      padding: 50px 0;
-
-      form {
-        flex: 0.5;
-        max-width: 47.5%;
-        padding: 0 0.8rem;
-      }
-
-      .email {
-        input {
-          width: 90%;
-          height: 40px;
-        }
-      }
-      .remember {
-        gap: 35px;
-      }
-      .login-btn {
-        width: 60%;
-        height: 50px;
-      }
-      section {
-        flex: 0.4;
-        max-width: 47.5%;
-      }
-    }
-    .foot {
-      padding: 20px 50px;
-    }
-  }
-}
-@media screen and (max-width: 550px) {
-  .main-div {
-    padding: 0 1rem;
-  }
-  .main {
-    padding: 0 10px;
-
-    .nav {
-      padding: 2rem 0;
+      width: 100%;
 
       q {
+        font-weight: 700;
+        font-size: 1.3rem;
+      }
+    }
+
+    .login__main-body {
+      padding: 2rem 0;
+
+      form {
+        flex: 1;
+
+        .body-input {
+          margin: 40px 0;
+          width: 70%;
+
+          div {
+            input {
+              width: 100%;
+              height: 40px;
+              border: none;
+              border-bottom: 1px solid black;
+            }
+            input:focus-within {
+              outline-style: none;
+              border-bottom: 1px solid #b4caff;
+            }
+          }
+
+          .eyes {
+            position: relative;
+
+            svg {
+              position: absolute;
+              top: 10px;
+              right: 0;
+            }
+          }
+        }
+
+        .remember {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          font-weight: 500;
+          margin: 1rem 0;
+        }
+
+        .login-btn {
+          margin-top: 20px;
+        }
+      }
+
+      section {
         display: none;
       }
     }
-    .body {
+
+    .foot {
+      padding: 0;
+      width: 100%;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+
+      a {
+        font-weight: 200;
+      }
+      a:hover {
+        color: var(--primary-color);
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .login {
+    height: 100%;
+    padding: 1rem 0;
+  }
+
+  .login__main {
+    .login__main-nav {
+      padding: 0 1.5rem;
+      width: 100%;
+
+      q {
+        font-weight: 500;
+        font-size: 0.8rem;
+      }
+    }
+
+    .login__main-body {
+      padding: 0;
+      width: 90%;
+      margin-top: 20px;
+
       form {
-        width: 100%;
-        max-width: 100%;
-      }
+        flex: 1;
 
-      .h {
-        font-size: 20px;
-      }
-
-      .email {
-        input {
+        .body-input {
           width: 100%;
-          height: 40px;
         }
-      }
-      
-      .login-btn {
-        width: 400px;
-      }
-      section {
-        img {
-          display: none;
+
+        .remember {
+          width: 100%;
+          justify-content: space-between;
+          font-size: 1rem;
+          gap: 10px;
+        }
+
+        .login-btn {
+          margin-top: 20px;
+          width: 20rem;
         }
       }
     }
+
     .foot {
-      padding: 0.5rem;
+      p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      a {
+        font-weight: 200;
+      }
+      a:hover {
+        color: var(--primary-color);
+        font-weight: 500;
+      }
     }
   }
 }
