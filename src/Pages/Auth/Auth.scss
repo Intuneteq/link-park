@@ -299,9 +299,7 @@
   padding: 3rem 6.25rem;
 }
 
-a{
-  color: #b4caff !important;
-}
+
 
 .signup__nav {
   article {
@@ -313,6 +311,10 @@ a{
       height: 100%;
       object-fit: contain;
     }
+
+  }
+  a{
+    color: #b4caff;
   }
 }
 
@@ -321,12 +323,9 @@ a{
 
   div {
     width: 100%;
-    // border: 1px solid black;
 
     label {
       width: 100%;
-      // position: relative;
-      // border: 1px solid black;
     }
     input {
       width: 100%;
