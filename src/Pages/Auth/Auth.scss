@@ -292,68 +292,125 @@
 }
 
 // ---------------------signup----------------------------------
-.bbb {
-  height: 100vh;
-}
 
-.aaaa {
-  width: 900px;
-  height: 90%;
-  margin: 50px auto;
-  border-radius: 10px;
-  box-shadow: rgb(0 0 0 / 30%) 0px 2px 6px;
+.signup {
   width: 100%;
-  // max-height: 100vh;
-  // background: url('../../Assets/homebackground.svg');
-}
-.nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 40px 20px;
-
-  img {
-    width: 200px;
-  }
+  height: 100%;
+  padding: 3rem 6.25rem;
 }
 
-.b {
-  text-align: center;
+a{
+  color: #b4caff !important;
+}
 
-  input {
-    width: 500px;
-    height: 40px;
-    margin: 15px 0;
-    border: none;
-    border-bottom: 1px solid black;
-    background-color: #ffff;
-  }
+.signup__nav {
+  article {
+    height: 5rem;
+    width: 5rem;
 
-  input:focus-within {
-    outline-style: none;
-  }
-
-  .DOB {
-    // display: flex;
-    // justify-content: space-around;
-    // align-items: center;
-    // padding: 0 400px;
-    // border: 1px solid black;
-
-    input {
-      width: 400px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
   }
 }
 
-@media only screen and (max-width: 900px) {
-  .bbb {
-    height: 100vh;
+#form {
+  width: 60%;
+
+  div {
+    width: 100%;
+    // border: 1px solid black;
+
+    label {
+      width: 100%;
+      // position: relative;
+      // border: 1px solid black;
+    }
+    input {
+      width: 100%;
+      height: 40px;
+      margin: 15px 0;
+      border: none;
+      border-bottom: 1px solid black;
+      background-color: #ffff;
+    }
+
+    input:focus-within {
+      outline-style: none;
+    }
   }
 }
-// @media only screen and (max-width: 550px){
-//     .bbb{
-//     }
-// }
+
+.red-dot {
+  position: relative;
+
+  svg {
+    position: absolute;
+    right: 0;
+    bottom: 70%;
+  }
+}
+
+.signup__class {
+  // border: 1px solid black;
+
+  .select-class {
+    width: 90%;
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 0.5rem;
+  }
+}
+
+.signup__input {
+  text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .signup {
+    width: 100%;
+    height: 100%;
+    padding: 2rem 3rem;
+  }
+
+  .signup__nav {
+    margin-bottom: 30px;
+  
+  }
+
+  #form {
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .signup {
+    width: 100%;
+    height: 100%;
+    padding: 1rem 1.5rem;
+  }
+
+  .signup__nav {
+    margin-bottom: 30px;
+
+    article {
+      height: 3rem;
+      width: 3rem;
+  
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  
+  }
+
+  #form {
+    width: 100%;
+  }
+}
 
 // .......................selectschool...............
 .schoolSelect {
