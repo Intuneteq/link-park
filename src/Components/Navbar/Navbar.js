@@ -5,9 +5,10 @@ import { HiX } from "react-icons/hi";
 import { CgArrowLongRight } from "react-icons/cg";
 import { TiThMenuOutline } from "react-icons/ti";
 import { motion, useCycle, AnimatePresence } from "framer-motion";
+import { AdvancedImage } from "@cloudinary/react";
+import { Cloudinary } from "@cloudinary/url-gen";
 
 import "./Navbar.scss";
-// import Images from '../../Constants';
 
 const Navbar = () => {
   const user = {
@@ -16,17 +17,25 @@ const Navbar = () => {
   };
   const [isMenu, setIsMenu] = useState(false);
 
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: "intuneteq",
+    },
+  });
+  const myImage = cld.image("v1663392950/link-park/Link-park-logo_e8hgxr.png");
+  myImage.format("auto").quality("auto");
+
   const menuVariants = {
     open: {
       opacity: 1,
-        clipPath: `circle(1000px at 40px 40px)`,
+      clipPath: `circle(1000px at 40px 40px)`,
       transition: {
         duration: 5,
       },
     },
 
     closed: {
-        clipPath: `circle(0 at 40px 40px)`,
+      clipPath: `circle(0 at 40px 40px)`,
       transition: {
         duration: 15,
       },
@@ -67,7 +76,7 @@ const Navbar = () => {
   return (
     <nav className="app__flex-2">
       <div className="nav__logo">
-        <h1>Link-Park</h1>
+        <AdvancedImage cldImg={myImage} />
       </div>
       <ul className="nav__links app__flex-2">
         <li>
@@ -79,26 +88,32 @@ const Navbar = () => {
         <li>
           <Link to="/">Blog</Link>
         </li>
-      
+
         <div className="app__flex">
-          <li
-          onMouseEnter={() =>setIsMenu(true)} 
-          >student</li>
+          <li onMouseEnter={() => setIsMenu(true)}>student</li>
           <AnimatePresence>
-              {isMenu && (
-                <motion.ul 
-                  className="student-menu"
-                    initial={{opacity:0,y:"-50%"}}
-          animate={{opacity:1,y:"0%"}}
-          exit={{opacity:0,y:"-50%",transition:{duration:"0.35"}}}
-          transition={{type:"spring",stiffness:"100", duration:"0.75"}} 
-                onMouseEnter={() =>setIsMenu(true)} 
+            {isMenu && (
+              <motion.ul
+                className="student-menu"
+                initial={{ opacity: 0, y: "-50%" }}
+                animate={{ opacity: 1, y: "0%" }}
+                exit={{
+                  opacity: 0,
+                  y: "-50%",
+                  transition: { duration: "0.35" },
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: "100",
+                  duration: "0.75",
+                }}
+                onMouseEnter={() => setIsMenu(true)}
                 onMouseLeave={() => setIsMenu(false)}
-                >
+              >
                 <li>{user.student}</li>
                 <li>{user.parent}</li>
               </motion.ul>
-              )}
+            )}
           </AnimatePresence>
         </div>
         <li>
@@ -140,14 +155,13 @@ const Navbar = () => {
                     <CgArrowLongRight />
                   </span>
                 </li>
-                
+
                 <li className="app__flex">
                   <Link to="/">About us</Link>{" "}
                   <span>
                     <CgArrowLongRight />
                   </span>
                 </li>
-                
               </motion.ul>
               <section className="app__flex" variants={listVariant}>
                 <div className="app__flex user-user">

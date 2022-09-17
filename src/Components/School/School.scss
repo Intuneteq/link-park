@@ -7,15 +7,20 @@
   min-height: 100vh;
 
   .gap {
-    gap: 8rem;
+    gap: 10rem;
   }
 }
 
+.school >div {
+    width: 100%;
+}
+
 #school__img {
-  height: 280px;
-  width: 280px;
+  height: 25rem;
+  width: 25rem;
   background-color: var(--primary-color);
   position: relative;
+  border-radius: 50%;
 
   img {
     width: 100%;

@@ -5,6 +5,7 @@ import MotionCard from "../../Cards/MotionCard";
 import "./Parent.scss";
 
 const Parent = () => {
+
   return (
     <div className="app__flex-4 parent">
       <div className="parent__img">
