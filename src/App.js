@@ -22,7 +22,7 @@ function App() {
 
         {/* protected routes */}
         <Route element={<RequireAuth />}>
-          <Route path="/fullname/dashboard" element={<Dashboard />} />
+          <Route path='/:firstName/dashboard' element={<Dashboard />} />
         </Route>
       </Routes>
     </div>

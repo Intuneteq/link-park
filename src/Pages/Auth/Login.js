@@ -44,15 +44,18 @@ const Login = () => {
         }
       );
 
-      console.log(JSON.stringify(response?.data));
+      // console.log(JSON.stringify(response?.data));
+      // console.log(response)
+      console.log(response.data.userInfo);
       //console.log(JSON.stringify(response));
       const accessToken = response?.data?.accessToken;
+      const user = response.data.userInfo;
       // const roles = response?.data?.roles;
-      setAuth({ email, password, accessToken });
+      setAuth({ email, password, accessToken, user });
       setEmail("");
       setPassword("");
       toast.success(response.success);
-      navigate("/fullname/dashboard");
+      navigate(`/${user.firstName}/dashboard`);
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");

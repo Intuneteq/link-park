@@ -6,6 +6,7 @@ import { IoMdNotifications } from "react-icons/io";
 import { Images } from "../Constants";
 
 const BoardNav = () => {
+  
   return (
     <div className="board__nav column-flex">
           <div className="board__nav-logo">

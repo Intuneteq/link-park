@@ -1,7 +1,6 @@
 .dashboard {
   width: 100vw;
   height: 100%;
-  // background-color: var(--secondary-color);
 
   display: flex;
   justify-content: center;
@@ -11,7 +10,7 @@
 }
 
 .board {
-  background-color: var(--white-color);
+  background-color: var(--primary-color);
   width: 90vw;
   height: 95%;
 
@@ -19,14 +18,11 @@
   padding: 20px;
 
   gap: 20px;
-
-  // border: 1px solid blue;
 }
 
 .board__nav {
   height: 100%;
   justify-content: space-between;
-  // border: 1px solid red;
 
   section {
     display: none;
@@ -106,7 +102,6 @@
       h4 {
         font-weight: 800;
         font-size: 1rem;
-        // border: 1px solid red;
         gap: 5px;
 
         span {
@@ -238,20 +233,14 @@
       }
     }
   }
-
-  // .activity-activity {
-
-  // }
 }
 
 .board__schedule {
   flex: 0.25;
-  //   border: 1px solid green;
 
   section {
     margin-bottom: 20px;
     position: relative;
-    // border: 1px solid red;
 
     svg {
       margin-top: 20px;
@@ -282,7 +271,6 @@
     h4 {
       font-weight: 800;
       font-size: 1rem;
-      //   margin-bottom: 5px;
     }
   }
 }
@@ -304,16 +292,6 @@
 
   .board {
     flex-direction: column;
-    // background-color: var(--white-color);
-    // width: 90vw;
-    // height: 95%;
-
-    // border-radius: 20px;
-    // padding: 20px;
-
-    // gap: 20px;
-
-    // border: 1px solid blue;
   }
 
   .board__nav {
@@ -321,16 +299,13 @@
     width: 100%;
     justify-content: space-between;
     flex-direction: row;
-    // border: 1px solid red;
 
     div:nth-child(3) {
       gap: 20px;
     }
 
     section {
-      // margin-bottom: 20px;
       position: relative;
-      // border: 1px solid red;
 
       svg {
         margin-top: 20px;
@@ -493,7 +468,6 @@
 
   .board__schedule {
     flex: 1;
-    // flex-direction: row;
 
     section:nth-child(1) {
       display: none;
@@ -525,16 +499,13 @@
     width: 100%;
     justify-content: space-between;
     flex-direction: row;
-    // border: 1px solid red;
 
     div:nth-child(3) {
       gap: 20px;
     }
 
     section {
-      // margin-bottom: 20px;
       position: relative;
-      // border: 1px solid red;
 
       svg {
         margin-top: 20px;
@@ -673,7 +644,6 @@
 
   .board__schedule {
     flex: 1;
-    // flex-direction: row;
 
     section:nth-child(1) {
       display: none;
