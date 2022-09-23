@@ -8,7 +8,9 @@ import SelectSchool from "./Pages/Auth/SelectSchool";
 import SignUp from "./Pages/Auth/SignUp";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Home from "./Pages/Home/Home";
-import RequireAuth from "./Components/RequireAuth";
+import RequireAuth from "./Auth/RequireAuth";
+import Subjects from "./DashboardComponents/Subjects";
+import PersistentLogin from "./Auth/PersistentLogin";
 
 function App() {
   return (
@@ -21,8 +23,11 @@ function App() {
         <Route path="/selectschool" element={<SelectSchool />} />
 
         {/* protected routes */}
-        <Route element={<RequireAuth />}>
-          <Route path="/:firstName/dashboard" element={<Dashboard />} />
+        <Route element={<PersistentLogin />}>
+          <Route element={<RequireAuth />}>
+            <Route path=":firstName/dashboard" element={<Dashboard />} />
+            <Route path=":firstName/dashboard/subjects" element={<Subjects />}/>
+          </Route>
         </Route>
       </Routes>
     </div>

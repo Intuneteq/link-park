@@ -5,7 +5,7 @@ import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { toast } from "react-hot-toast";
 import { AdvancedImage } from "@cloudinary/react";
 import { Cloudinary } from "@cloudinary/url-gen";
-import SyncLoader from 'react-spinners/SyncLoader';
+import SyncLoader from "react-spinners/SyncLoader";
 
 import "./Auth.scss";
 import axios from "../../api/axios";
@@ -16,7 +16,7 @@ const LOGIN__ENDPOINT = "/api/auth";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { setAuth } = useAuth(); //using the authcontext
+  const { auth, setAuth, persist, setPersist } = useAuth(); //using the authcontext
   const { loading, setLoading } = useContext(AppContext);
 
   const emailRef = useRef();
@@ -48,15 +48,15 @@ const Login = () => {
         }
       );
 
-      console.log(response.data.userInfo);
       const accessToken = response?.data?.accessToken;
       const user = response.data.userInfo;
-      setAuth({ email, password, accessToken, user });
+      setAuth({ email, accessToken, user });
       setEmail("");
       setPassword("");
       setLoading(false);
       toast.success(`${user.firstName} ${user.lastName} Sign In Successful`);
       navigate(`/${user.firstName}/dashboard`);
+      console.log('auth after login:', auth);
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");
@@ -79,10 +79,18 @@ const Login = () => {
   const myImage = cld.image("v1663392950/link-park/Link-park-logo_e8hgxr.png");
   myImage.format("auto").quality("auto");
 
+  const togglePersist = () => {
+    setPersist(prev => !prev)
+  }
+
+  useEffect(() => {
+    localStorage.setItem("persist", persist);
+  }, [persist])
+
   return (
     <div className={loading ? "loading app__flex" : "login app__flex"}>
       {loading ? (
-        <SyncLoader color = "#b1b1d8" />
+        <SyncLoader color="#b1b1d8" />
       ) : (
         <div className="login__main app__flex">
           <p
@@ -138,16 +146,19 @@ const Login = () => {
               </div>
               <div className="remember">
                 <span>
-                  <input type="checkbox" /> Remember me
+                  <input 
+                    type="checkbox" 
+                    onChange={togglePersist}
+                    checked={persist}
+                  /> 
+                    Remember me
                 </span>
                 <br />
                 <p>Forgot password?</p>
               </div>
-              {/* <Link to="/fullname/dashboard"> */}
               <div className="app__flex">
                 <button className="btn-primary login-btn">Login</button>
               </div>
-              {/* </Link> */}
             </form>
             <section className="app__flex">
               <img src={Images.reading} alt="" />

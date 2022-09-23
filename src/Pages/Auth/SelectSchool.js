@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 import './Auth.scss';
 
-const SelectSchool = () => {
+const SelectSchool = ({firstName}) => {
+  
   return (
     <div className='schoolSelect app__flex'>
         <h1>WELCOME TO LINK PARK</h1>
@@ -17,11 +18,12 @@ const SelectSchool = () => {
         </select>
         <br/>
        <div>
-       <Link to='/Login'><button className='btn-primary'>Login</button></Link>     
+       <Link to="/Login"><button className='btn-primary'>Login</button></Link>     
+       <Link to={`/${firstName}/dashboard`}><button className='btn-primary'>Login straight</button></Link>     
        <Link to='/sign-up'><button className='btn-primary'>Sign up</button></Link>     
        </div>
     </div>
   )
 }
 
-export default SelectSchool
+export default SelectSchool;
