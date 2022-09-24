@@ -1,29 +1,29 @@
-import React, { useRef, useState, useEffect, useContext } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Images } from "../../Constants";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
-import { toast } from "react-hot-toast";
+// import { toast } from "react-hot-toast";
 import { AdvancedImage } from "@cloudinary/react";
 import { Cloudinary } from "@cloudinary/url-gen";
 import SyncLoader from "react-spinners/SyncLoader";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import "./Auth.scss";
-import axios from "../../api/axios";
-import useAuth from "../../hooks/useAuth";
-import AppContext from "../../Context/AppProvider";
+// import axios from "../../api/axios";
+// import useAuth from "../../hooks/useAuth";
+// import AppContext from "../../Context/AppProvider";
 import useToggle from "../../hooks/useToggle";
-// import { setCredentials } from "../../StateManager/auth/authSlice";
-// import { useLoginMutation } from "../../StateManager/auth/authApiSlice";
+import { setCredentials } from "../../StateManager/auth/authSlice";
+import { useLoginMutation } from "../../StateManager/auth/authApiSlice";
 
-const LOGIN__ENDPOINT = "/api/auth";
+// const LOGIN__ENDPOINT = "/api/auth";
 
-const Login = () => {
+const LoginAuth = () => {
   const navigate = useNavigate();
-  const { auth, setAuth } = useAuth(); //using the authcontext
-  const { loading, setLoading } = useContext(AppContext);
-  // const [login, { isLoading }] = useLoginMutation();
-  // const dispatch = useDispatch();
+//   const { auth, setAuth } = useAuth();
+//   const { loading, setLoading } = useContext(AppContext);
+  const [login, { isLoading }] = useLoginMutation();
+  const dispatch = useDispatch();
 
   const emailRef = useRef();
   const errRef = useRef();
@@ -44,28 +44,18 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    // setLoading(true);
 
     try {
-      const response = await axios.post(
-        LOGIN__ENDPOINT,
-        { email, password },
-        {
-          headers: { "Content-Type": "application/json" },
-          withCredentials: true,
-        }
-      );
-      console.log('res', response);
-
-      const accessToken = response?.data?.accessToken;
-      const user = response.data.userInfo;
-      setAuth({ email, accessToken, user });
+      const userData = await login({ email, password }).unwrap()
+      console.log('res', userData);
+      const userFirstName = userData.data.firstName
+      dispatch(setCredentials({...userData, email}))
       setEmail("");
       setPassword("");
-      setLoading(false);
-      toast.success(`${user.firstName} ${user.lastName} Sign In Successful`);
-      navigate(`/${user.firstName}/dashboard`);
-      console.log('auth after login:', auth);
+    //   setLoading(false);
+    //   toast.success(`${user.firstName} ${user.lastName} Sign In Successful`);
+      navigate(`/${userFirstName}/dashboard`);
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");
@@ -89,8 +79,8 @@ const Login = () => {
   myImage.format("auto").quality("auto");
 
   return (
-    <div className={loading ? "loading app__flex" : "login app__flex"}>
-      {loading ? (
+    <div className={isLoading ? "loading app__flex" : "login app__flex"}>
+      {isLoading ? (
         <SyncLoader color="#b1b1d8" />
       ) : (
         <div className="login__main app__flex">
@@ -178,4 +168,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginAuth;

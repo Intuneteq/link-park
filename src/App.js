@@ -4,6 +4,7 @@ import { Toaster } from "react-hot-toast";
 
 import "./App.scss";
 import Login from "./Pages/Auth/Login";
+import LoginAuth from "./Pages/Auth/LoginAuth";
 import SelectSchool from "./Pages/Auth/SelectSchool";
 import SignUp from "./Pages/Auth/SignUp";
 import Dashboard from "./Pages/Dashboard/Dashboard";
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Login" element={<Login />} />
+        <Route path="/Loginauth" element={<LoginAuth />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/selectschool" element={<SelectSchool />} />
 

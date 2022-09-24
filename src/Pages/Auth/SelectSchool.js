@@ -19,7 +19,7 @@ const SelectSchool = ({firstName}) => {
         <br/>
        <div>
        <Link to="/Login"><button className='btn-primary'>Login</button></Link>     
-       <Link to={`/${firstName}/dashboard`}><button className='btn-primary'>Login straight</button></Link>     
+       <Link to='/LoginAuth'><button className='btn-primary'>Login straight</button></Link>     
        <Link to='/sign-up'><button className='btn-primary'>Sign up</button></Link>     
        </div>
     </div>
