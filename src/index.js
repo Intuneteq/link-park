@@ -2,8 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-// import { store } from "./StateManager/store";
-// import { Provider } from "react-redux";
+import { disableReactDevTools } from "@fvilers/disable-react-devtools";
+import { store } from "./StateManager/store";
+import { Provider } from "react-redux";
 
 import "./index.css";
 import App from "./App";
@@ -19,17 +20,23 @@ const theme = extendTheme({
   },
 });
 
+if (process.env.NODE_ENV === "production") {
+  disableReactDevTools();
+}
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
-    <ChakraProvider theme={theme}>
-      <AppProvider>
-        <AuthProvider>
-          <Routes>
-            <Route path="/*" element={<App />} />
-          </Routes>
-        </AuthProvider>
-      </AppProvider>
-    </ChakraProvider>
-  </BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
+      <ChakraProvider theme={theme}>
+        <AppProvider>
+          <AuthProvider>
+            <Routes>
+              <Route path="/*" element={<App />} />
+            </Routes>
+          </AuthProvider>
+        </AppProvider>
+      </ChakraProvider>
+    </BrowserRouter>
+  </Provider>
 );

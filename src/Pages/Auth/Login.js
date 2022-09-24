@@ -11,12 +11,13 @@ import "./Auth.scss";
 import axios from "../../api/axios";
 import useAuth from "../../hooks/useAuth";
 import AppContext from "../../Context/AppProvider";
+import useToggle from "../../hooks/useToggle";
 
 const LOGIN__ENDPOINT = "/api/auth";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { auth, setAuth, persist, setPersist } = useAuth(); //using the authcontext
+  const { auth, setAuth } = useAuth(); //using the authcontext
   const { loading, setLoading } = useContext(AppContext);
 
   const emailRef = useRef();
@@ -25,6 +26,8 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errMsg, setErrMsg] = useState("");
+
+  const [check, toggleCheck] = useToggle('persist', false);
 
   useEffect(() => {
     emailRef.current.focus();
@@ -47,6 +50,7 @@ const Login = () => {
           withCredentials: true,
         }
       );
+      console.log('res', response);
 
       const accessToken = response?.data?.accessToken;
       const user = response.data.userInfo;
@@ -78,14 +82,6 @@ const Login = () => {
   });
   const myImage = cld.image("v1663392950/link-park/Link-park-logo_e8hgxr.png");
   myImage.format("auto").quality("auto");
-
-  const togglePersist = () => {
-    setPersist(prev => !prev)
-  }
-
-  useEffect(() => {
-    localStorage.setItem("persist", persist);
-  }, [persist])
 
   return (
     <div className={loading ? "loading app__flex" : "login app__flex"}>
@@ -148,8 +144,8 @@ const Login = () => {
                 <span>
                   <input 
                     type="checkbox" 
-                    onChange={togglePersist}
-                    checked={persist}
+                    onChange={toggleCheck}
+                      checked={check}
                   /> 
                     Remember me
                 </span>

@@ -10,7 +10,7 @@
 }
 
 .board {
-  background-color: var(--color-mint);
+  background-color: var(--primary-color);
   width: 90vw;
   height: 95%;
 
@@ -52,7 +52,9 @@
     svg {
       width: 20px;
       height: 20px;
-      color: rgb(97, 132, 216, 1);
+      // color: rgb(97, 132, 216, 1);
+      color: var(--color-lilac-selection);
+      font-weight: 900;
     }
 
     &:hover {

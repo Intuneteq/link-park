@@ -1,25 +1,16 @@
-// import {configureStore} from '@reduxjs/toolkit';
-// import dataReducer from '../Features/dataSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import { apiSlice } from "../api/apiSlice";
+import authReducer from "./auth/authSlice";
 
-// export const store = configureStore({
-//     reducer: {
-//         data: dataReducer,
-//     }
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export const store = configureStore({
+  reducer: {
+    [apiSlice.reducerPath]: apiSlice.reducer,
+    auth: authReducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(apiSlice.middleware),
+    devTools: true
+});
 
 //1. open statemanager folder and open store file
 //2. import confingure store from redux tool kit
