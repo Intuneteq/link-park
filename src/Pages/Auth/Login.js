@@ -5,12 +5,12 @@ import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { toast } from "react-hot-toast";
 import { AdvancedImage } from "@cloudinary/react";
 import { Cloudinary } from "@cloudinary/url-gen";
-import SyncLoader from "react-spinners/SyncLoader";
 
 import "./Auth.scss";
 import axios from "../../api/axios";
 import useAuth from "../../hooks/useAuth";
 import AppContext from "../../Context/AppProvider";
+import Loading from "../../Constants/Loading";
 
 const LOGIN__ENDPOINT = "/api/auth";
 
@@ -88,10 +88,8 @@ const Login = () => {
   }, [persist])
 
   return (
-    <div className={loading ? "loading app__flex" : "login app__flex"}>
-      {loading ? (
-        <SyncLoader color="#b1b1d8" />
-      ) : (
+    <div className= "login app__flex">
+      {loading ? <Loading /> : (
         <div className="login__main app__flex">
           <p
             ref={errRef}

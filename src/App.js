@@ -9,8 +9,11 @@ import SignUp from "./Pages/Auth/SignUp";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Home from "./Pages/Home/Home";
 import RequireAuth from "./Auth/RequireAuth";
-import Subjects from "./DashboardComponents/Subjects";
+import Subjects from "./Pages/Dashboard/Subjects";
+import DashboardLayout from "./DashboardComponents/DashboardLayout";
 import PersistentLogin from "./Auth/PersistentLogin";
+import Chat from "./Pages/Dashboard/Chat";
+import Activities from "./Pages/Dashboard/Activities";
 
 function App() {
   return (
@@ -22,11 +25,14 @@ function App() {
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/selectschool" element={<SelectSchool />} />
 
-        {/* protected routes */}
         <Route element={<PersistentLogin />}>
           <Route element={<RequireAuth />}>
-            <Route path=":firstName/dashboard" element={<Dashboard />} />
-            <Route path=":firstName/dashboard/subjects" element={<Subjects />}/>
+            <Route element={<DashboardLayout />}>
+              <Route path=":firstName/dashboard/" element={<Dashboard />} />
+              <Route path=":firstName/library" element={<Subjects />} />
+              <Route path=":firstName/messages" element={<Chat />} />
+              <Route path=":firstName/activities" element={<Activities />} />
+            </Route>
           </Route>
         </Route>
       </Routes>

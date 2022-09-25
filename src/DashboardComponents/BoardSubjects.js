@@ -1,7 +1,39 @@
 import React from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import { Progress } from "@arco-design/web-react";
 
 const BoardSubjects = () => {
+  const progress = [
+    {
+      currentProgress: 50,
+      totalProgress: 100,
+      percentageCompleted: function() {
+        return (this.currentProgress / this.totalProgress ) * 100
+      },
+    },
+    {
+      currentProgress: 40,
+      totalProgress: 100,
+      percentageCompleted: function() {
+        return (this.currentProgress / this.totalProgress ) * 100
+      },
+    },
+    {
+      currentProgress: 35,
+      totalProgress: 100,
+      percentageCompleted: function() {
+        return (this.currentProgress / this.totalProgress ) * 100
+      },
+    },
+    {
+      currentProgress: 75,
+      totalProgress: 100,
+      percentageCompleted: function() {
+        return (this.currentProgress / this.totalProgress ) * 100
+      },
+    },
+  ];
+
   return (
     <div className="board__content-subject">
       <div className="subject-head app__flex-2">
@@ -18,18 +50,29 @@ const BoardSubjects = () => {
         </div>
       </div>
       <div className="subject-board">
-        <div className="app__flex">
-          <p>200/300</p>
-        </div>
-        <div className="app__flex">
-          <p>200/300</p>
-        </div>
-        <div className="app__flex">
-          <p>200/300</p>
-        </div>
-        <div className="app__flex">
-          <p>200/300</p>
-        </div>
+        {progress.map((item, index) => (
+          <div className="column-flex" key={index}>
+            <article>
+              <h6>
+                {item.currentProgress}/<span>{item.totalProgress}</span>
+              </h6>
+              <span>Completed Tasks</span>
+            </article>
+            <article className="app__flex-2">
+            <p className="column-flex">
+            {item.percentageCompleted()} <span>% Completed</span>
+            </p>
+            <span className="emoji">📘</span>
+          </article>
+          <Progress
+            percent={item.percentageCompleted()}
+            width="50%"
+            color="#C9CDD4"
+            size="small"
+            type="line"
+          />
+          </div>
+        ))}
       </div>
     </div>
   );

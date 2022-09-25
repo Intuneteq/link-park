@@ -5,6 +5,7 @@ const AppContext = createContext();
 export const AppProvider = ({children}) => {
     const [loading, setLoading] = useState(false);
     const [userProfile, setUserProfile] = useState({});
+
     return (
         <AppContext.Provider value={{
             loading,
