@@ -6,14 +6,15 @@ import "./App.scss";
 import Login from "./Pages/Auth/Login";
 import SelectSchool from "./Pages/Auth/SelectSchool";
 import SignUp from "./Pages/Auth/SignUp";
-import Dashboard from "./Pages/Dashboard/Dashboard";
 import Home from "./Pages/Home/Home";
 import RequireAuth from "./Auth/RequireAuth";
-import Subjects from "./Pages/Dashboard/Subjects";
-import DashboardLayout from "./DashboardComponents/DashboardLayout";
 import PersistentLogin from "./Auth/PersistentLogin";
-import Chat from "./Pages/Dashboard/Chat";
-import Activities from "./Pages/Dashboard/Activities";
+import DashboardLayout from "./Pages/Dashboard/DashboardLayout";
+import Dashboard from "./Pages/Dashboard/Home/Dashboard";
+import Subjects from "./Pages/Dashboard/Library/Subjects";
+import Chat from "./Pages/Dashboard/Chats/Chat";
+import Activities from "./Pages/Dashboard/Activities/Activities";
+import Calendar from "./Pages/Dashboard/Calendar/Calendar"
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               <Route path=":firstName/library" element={<Subjects />} />
               <Route path=":firstName/messages" element={<Chat />} />
               <Route path=":firstName/activities" element={<Activities />} />
+              <Route path=":firstName/calendar" element={<Calendar />} />
             </Route>
           </Route>
         </Route>

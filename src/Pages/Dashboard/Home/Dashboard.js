@@ -1,0 +1,29 @@
+import React from "react";
+
+import "../Dashboard.scss";
+import BoardSubjects from "./BoardSubjects";
+import BoardActivities from "./BoardActivities";
+import BoardSchedule from "./BoardSchedule";
+import useGetUser from "../../../hooks/useGetUser";
+
+const Dashboard = () => {
+  const { userProfile } = useGetUser();
+
+  return (
+    <div className="board app__flex-3">
+      <div className="board__content">
+        <div className="board__content-head">
+          <h1 className="head-text">{`Hey ${userProfile.firstName}, `}</h1>
+          <p>It's sunny today and it's time to study</p>
+        </div>
+        <BoardSubjects />
+        <BoardActivities />
+      </div>
+      <div className="board-schedule">
+        <BoardSchedule />
+      </div>
+    </div>
+  );
+};
+
+export default Dashboard;

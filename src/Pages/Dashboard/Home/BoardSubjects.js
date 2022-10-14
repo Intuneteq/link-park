@@ -87,8 +87,8 @@ const BoardSubjects = () => {
           onSwiper={setSwiperRef}
         >
           {progress.map((item, index) => (
-            <SwiperSlide>
-              <div className="column-flex" key={index}>
+            <SwiperSlide key={index}>
+              <div className="column-flex" >
                 <article>
                   <h6>
                     {item.currentProgress}/<span>{item.totalProgress}</span>

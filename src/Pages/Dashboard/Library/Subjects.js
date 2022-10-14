@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import AppContext from '../../Context/AppProvider';
+import AppContext from '../../../Context/AppProvider';
 
 const Subjects = () => {
     const {userProfile} = useContext(AppContext);

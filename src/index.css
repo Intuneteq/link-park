@@ -85,7 +85,7 @@ body {
 
   --color-mint: #774069;
     --color-highlight: #b1b1d8;
-    --color-lilac: #4c3a69;
+    --color-lilac: rgb(76, 58, 105);
     --color-peach: rgb(119, 64, 105);
     --color-sherbet: #2c2a32;
     --color-sherbet-fade: hsl(260, 24%, 18%);

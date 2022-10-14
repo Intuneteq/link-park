@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useContext } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Images } from "../../Constants";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
@@ -9,16 +9,15 @@ import { Cloudinary } from "@cloudinary/url-gen";
 import "./Auth.scss";
 import axios from "../../api/axios";
 import useAuth from "../../hooks/useAuth";
-import AppContext from "../../Context/AppProvider";
+import useAppProvider from "../../hooks/useAppProvider";
 import Loading from "../../Constants/Loading";
 
 const LOGIN__ENDPOINT = "/api/auth";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { auth, setAuth, persist, setPersist } = useAuth(); //using the authcontext
-  const { loading, setLoading } = useContext(AppContext);
-
+  const { setAuth, persist, setPersist } = useAuth(); //using the authcontext
+  const { loading, setLoading } = useAppProvider();
   const emailRef = useRef();
   const errRef = useRef();
 
@@ -50,13 +49,14 @@ const Login = () => {
 
       const accessToken = response?.data?.accessToken;
       const user = response.data.userInfo;
+      // console.log('user', user);
+
       setAuth({ email, accessToken, user });
       setEmail("");
       setPassword("");
-      setLoading(false);
       toast.success(`${user.firstName} ${user.lastName} Sign In Successful`);
       navigate(`/${user.firstName}/dashboard`);
-      console.log('auth after login:', auth);
+      setLoading(false);
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");
@@ -67,6 +67,8 @@ const Login = () => {
       } else {
         setErrMsg("Login Failed");
       }
+      setLoading(false);
+      navigate(-1)
       errRef.current.focus();
     }
   };
@@ -80,16 +82,18 @@ const Login = () => {
   myImage.format("auto").quality("auto");
 
   const togglePersist = () => {
-    setPersist(prev => !prev)
-  }
+    setPersist((prev) => !prev);
+  };
 
   useEffect(() => {
     localStorage.setItem("persist", persist);
-  }, [persist])
+  }, [persist]);
 
   return (
-    <div className= "login app__flex">
-      {loading ? <Loading /> : (
+    <div className="login app__flex">
+      {loading ? (
+        <Loading />
+      ) : (
         <div className="login__main app__flex">
           <p
             ref={errRef}
@@ -144,12 +148,12 @@ const Login = () => {
               </div>
               <div className="remember">
                 <span>
-                  <input 
-                    type="checkbox" 
+                  <input
+                    type="checkbox"
                     onChange={togglePersist}
                     checked={persist}
-                  /> 
-                    Remember me
+                  />
+                  Remember me
                 </span>
                 <br />
                 <p>Forgot password?</p>

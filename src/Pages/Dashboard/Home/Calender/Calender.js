@@ -10,16 +10,16 @@ const Calender = () => {
 
   return (
     <div className="calen">
-        
       <div className="calendar-container">
-      <section>
-            <h4>Schedule</h4>
-          </section>
-        <Calendar onChange={setDate} value={date} />
+        <section>
+          <h4>Schedule</h4>
+        </section>
+        <Calendar
+          onClick={(value) => alert("newdate is: ", value)}
+          onChange={setDate}
+          value={date}
+        />
       </div>
-      {/* <div className="text-center">
-      Selected date: {date.toDateString()}
-             </div> */}
 
       <section className="calen__upcoming">
         <h4>Upcoming</h4>
