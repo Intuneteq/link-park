@@ -22,7 +22,7 @@ const Calender = () => {
       </div>
 
       <section className="calen__upcoming">
-        <h4>Upcoming</h4>
+        <h4>To-Do</h4>
         <div className="app__flex-3">
           <div className="calen__upcoming-time column-flex">
             <p>09:00</p>

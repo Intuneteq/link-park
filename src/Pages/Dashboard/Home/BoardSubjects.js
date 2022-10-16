@@ -83,7 +83,23 @@ const BoardSubjects = () => {
         <Swiper
           modules={[Navigation]}
           className="mySwiper"
-          slidesPerView={4}
+          slidesPerView={1}
+          breakpoints={{
+            400: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+
+            600: {
+              slidesPerView: 3,
+              spaceBetween: 10,
+            },
+
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+          }}
           onSwiper={setSwiperRef}
         >
           {progress.map((item, index) => (
