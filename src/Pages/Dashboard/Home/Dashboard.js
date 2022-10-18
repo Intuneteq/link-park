@@ -6,13 +6,14 @@ import BoardActivities from "./BoardActivities";
 import BoardSchedule from "./BoardSchedule";
 import useGetUser from "../../../hooks/useGetUser";
 import BoardNotes from "./BoardNotes";
+import Loading from "../../../Constants/Loading";
 
 const Dashboard = () => {
   const { userProfile } = useGetUser();
 
   return (
     <>
-      {userProfile && (
+      {userProfile ? (
         <div className="board app__flex-3">
           <div className="board__content">
             <div className="board__content-head app__flex-2">
@@ -31,6 +32,8 @@ const Dashboard = () => {
             <BoardSchedule />
           </div>
         </div>
+      ) : (
+        <Loading />
       )}
     </>
   );

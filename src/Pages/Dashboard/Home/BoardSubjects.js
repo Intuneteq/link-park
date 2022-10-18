@@ -21,6 +21,7 @@ const BoardSubjects = () => {
 
   const progress = [
     {
+      backgroundColor: "#b1b1d8",
       currentProgress: 50,
       totalProgress: 100,
       percentageCompleted: function () {
@@ -28,6 +29,7 @@ const BoardSubjects = () => {
       },
     },
     {
+      backgroundColor: "rgb(76, 58, 105)",
       currentProgress: 40,
       totalProgress: 100,
       percentageCompleted: function () {
@@ -35,6 +37,7 @@ const BoardSubjects = () => {
       },
     },
     {
+      backgroundColor: "rgba(119, 64, 105, 0.9)",
       currentProgress: 35,
       totalProgress: 100,
       percentageCompleted: function () {
@@ -42,6 +45,7 @@ const BoardSubjects = () => {
       },
     },
     {
+      backgroundColor: "hsl(314, 22%, 42%)",
       currentProgress: 75,
       totalProgress: 100,
       percentageCompleted: function () {
@@ -104,7 +108,7 @@ const BoardSubjects = () => {
         >
           {progress.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="column-flex" >
+              <div style={{backgroundColor: item.backgroundColor}} className="column-flex" >
                 <article>
                   <h6>
                     {item.currentProgress}/<span>{item.totalProgress}</span>

@@ -1,7 +1,6 @@
 .dashboard {
   width: 100%;
   max-width: 100%;
-  background-color: var(--color-mint);
   min-height: 100vh;
 
   main {
@@ -81,7 +80,7 @@
     }
 
     &:hover {
-      border-right: 4px solid var(--color-mint);
+      border-right: 4px solid var(--btn-blue);
       background: var(--color-sherbet-fade);
       transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
     }
@@ -102,7 +101,7 @@
 }
 
 .active {
-  background: var(--color-mint);
+  background: var(--primary-color);
 }
 
 .board__content {
@@ -117,7 +116,6 @@
       font-weight: 900;
       font-size: 2.5rem;
       letter-spacing: 1px;
-      color: var(--white-color);
     }
 
     p {
@@ -141,7 +139,6 @@
       width: 100%;
 
       h4 {
-        color: var(--white-color);
         font-weight: 800;
         font-size: 1rem;
         gap: 5px;
@@ -151,7 +148,7 @@
           font-weight: 900;
           width: 25px;
           height: 25px;
-          background-color: var(--third-color);
+          background-color: var(--primary-color);
           border-radius: 50%;
         }
       }
@@ -163,7 +160,7 @@
           width: 30px;
           height: 30px;
           border-radius: 50%;
-          background-color: var(--third-color);
+          background-color: var(--primary-color);
           cursor: pointer;
 
           svg {
