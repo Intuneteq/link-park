@@ -1,12 +1,11 @@
-import { useContext } from 'react';
 import axios from '../api/axios';
-import AppContext from '../Context/AppProvider';
 import useAuth from './useAuth';
+import useAppProvider from "./useAppProvider";
 
 
 const useRefreshToken = () => {
     const { setAuth } = useAuth();
-    const { setUserProfile } = useContext(AppContext)
+    const { setUserProfile } = useAppProvider();
 
 
     const refresh = async () => {

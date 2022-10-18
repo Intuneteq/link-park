@@ -14,11 +14,10 @@ const useGetUser = () => {
   const location = useLocation();
 
   useEffect(() => {
+    let controller = new AbortController();
     const getUsers = async () => {
       try {
         const res = await axiosPrivate.get(`/api/users/${id}`);
-
-        // console.log("res", res.data);
         setUserProfile(res.data);
       } catch (error) {
         console.error("error from trying to get users", error);
@@ -26,6 +25,7 @@ const useGetUser = () => {
       }
     };
     getUsers();
+    return () => controller?.abort();
   }, [id, axiosPrivate, setUserProfile, location, navigate]);
 
   return { userProfile };

@@ -20,7 +20,7 @@ const BoardNotes = () => {
 
   const signOut = async () => {
     await logOut();
-    navigate("/");
+    navigate("/Login");
   };
 
   const user = forwardRef((props, ref) => (

@@ -14,7 +14,8 @@ import Dashboard from "./Pages/Dashboard/Home/Dashboard";
 import Subjects from "./Pages/Dashboard/Library/Subjects";
 import Chat from "./Pages/Dashboard/Chats/Chat";
 import Activities from "./Pages/Dashboard/Activities/Activities";
-import Calendar from "./Pages/Dashboard/Calendar/Calendar"
+import Calendar from "./Pages/Dashboard/Calendar/Calendar";
+import AuthLayout from "./Pages/Auth/AuthLayout";
 
 function App() {
   return (
@@ -22,9 +23,11 @@ function App() {
       <Toaster />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/selectschool" element={<SelectSchool />} />
+        <Route element={<AuthLayout />}>
+          <Route path="/Login" element={<Login />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/selectschool" element={<SelectSchool />} />
+        </Route>
 
         <Route element={<PersistentLogin />}>
           <Route element={<RequireAuth />}>
