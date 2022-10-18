@@ -635,9 +635,7 @@
       }
 
       .subject-board {
-        width: 360px;
-        max-width: 100%;
-        min-width: 100%;
+        width: 100%;
 
         .swiper-slide {
           justify-content: center;
@@ -645,9 +643,9 @@
       }
 
       .swiper-slide > div {
-        width: 100%;
+        width: 100px !important;
         height: 160px;
-        max-width: 100%;
+        max-width: none;
         min-height: none;
         min-width: none;
       }

@@ -88,8 +88,9 @@ const BoardSubjects = () => {
           modules={[Navigation]}
           className="mySwiper"
           slidesPerView={1}
+          spaceBetween="20"
           breakpoints={{
-            400: {
+            300: {
               slidesPerView: 2,
               spaceBetween: 10,
             },
