@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { NextUIProvider } from "@nextui-org/react";
 import "swiper/css/bundle";
 
 import "./index.css";
@@ -21,14 +22,16 @@ const theme = extendTheme({
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <ChakraProvider theme={theme}>
-      <AppProvider>
-        <AuthProvider>
-          <Routes>
-            <Route path="/*" element={<App />} />
-          </Routes>
-        </AuthProvider>
-      </AppProvider>
-    </ChakraProvider>
+    <NextUIProvider>
+      <ChakraProvider theme={theme}>
+        <AppProvider>
+          <AuthProvider>
+            <Routes>
+              <Route path="/*" element={<App />} />
+            </Routes>
+          </AuthProvider>
+        </AppProvider>
+      </ChakraProvider>
+    </NextUIProvider>
   </BrowserRouter>
 );
